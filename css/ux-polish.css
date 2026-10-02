@@ -1,0 +1,487 @@
+/* ==========================================================================
+   SPS Code Orbit — UI/UX polish layer (keeps existing brand tokens)
+   Intentional hierarchy, less "template" noise, accessible motion.
+   ========================================================================== */
+
+/* ——— Reduced motion ——— */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .orbit-celebrate,
+  .orbit-celebrate-burst {
+    display: none !important;
+  }
+}
+
+/* ——— Focus visibility ——— */
+:focus-visible {
+  outline: 2px solid var(--color-primary, #70D6FF);
+  outline-offset: 2px;
+}
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ——— Buttons: press feedback without heavy glow ——— */
+.btn:active:not(:disabled),
+.btn-pill:active:not(:disabled),
+.btn-run-code:active:not(:disabled) {
+  transform: translateY(1px) scale(0.98);
+}
+.btn,
+.btn-pill {
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+/* ——— Cards: quieter hover (less identical “glow box” feel) ——— */
+.card,
+.glass-card {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+}
+.card:hover,
+.glass-card:hover,
+.interactive-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  border-color: rgba(112, 214, 255, 0.28);
+  transform: translateY(-2px);
+}
+
+/* ——— Section labels: clearer hierarchy ——— */
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted, #94A3B8);
+}
+
+/* ——— Dashboard: primary next-action emphasis ——— */
+.continue-learning-banner,
+#continue-learning-banner {
+  border: 1px solid rgba(112, 214, 255, 0.35);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+#btn-continue-learning-action {
+  min-height: 48px;
+  font-weight: 800;
+}
+
+/* Metric strip: slightly denser, less equal “wall of cards” */
+.dashboard-grid .metric-card,
+.stats-content-grid > div {
+  border-radius: 14px;
+}
+
+/* ——— Coding challenge: distinct “your turn” panel ——— */
+.cyber-ide-container#practice-challenge-section,
+.orbit-challenge-panel {
+  border: 1px solid rgba(52, 211, 153, 0.45) !important;
+  background: linear-gradient(180deg, rgba(6, 24, 20, 0.55) 0%, rgba(11, 16, 32, 0.95) 40%) !important;
+  box-shadow: 0 0 0 1px rgba(52, 211, 153, 0.12), 0 12px 32px rgba(0, 0, 0, 0.4) !important;
+  border-radius: 16px;
+  margin-top: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.orbit-challenge-panel .ide-task-prompt,
+#practice-challenge-section .ide-task-prompt {
+  background: rgba(52, 211, 153, 0.08) !important;
+  border-bottom: 1px solid rgba(52, 211, 153, 0.2) !important;
+}
+.orbit-challenge-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6EE7B7;
+  margin-bottom: 0.35rem;
+}
+
+/* Console panel: readable monospace output */
+.console-output-text,
+.ide-console-panel .console-output-text {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  min-height: 120px;
+}
+.ide-code-input {
+  font-family: "JetBrains Mono", ui-monospace, monospace !important;
+  white-space: pre;
+  overflow-x: auto;
+  word-wrap: normal;
+  tab-size: 2;
+}
+
+/* Split workspace on narrow screens: stack without crushing code */
+@media (max-width: 768px) {
+  .ide-split-workspace {
+    flex-direction: column !important;
+  }
+  .ide-code-panel,
+  .ide-console-panel {
+    width: 100% !important;
+    min-height: 180px;
+  }
+  .ide-code-input {
+    min-height: 160px;
+  }
+  .page-content {
+    padding: 1rem !important;
+  }
+}
+
+/* ——— Progress badges ——— */
+.orbit-badge-card {
+  text-align: center;
+  padding: 1.25rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-surface-secondary);
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+.orbit-badge-card.is-unlocked {
+  border-color: rgba(52, 211, 153, 0.45);
+  background: rgba(16, 40, 32, 0.55);
+}
+.orbit-badge-card.is-locked {
+  opacity: 0.55;
+}
+.orbit-badge-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.65rem;
+  font-size: 1.35rem;
+}
+.orbit-badge-card.is-unlocked .orbit-badge-icon {
+  background: rgba(52, 211, 153, 0.18);
+  color: #6EE7B7;
+}
+.orbit-badge-card.is-locked .orbit-badge-icon {
+  background: rgba(148, 163, 184, 0.12);
+  color: #94A3B8;
+}
+
+/* ——— Success toast / celebration overlay ——— */
+.orbit-celebrate {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background: rgba(7, 10, 20, 0.35);
+  animation: orbit-celebrate-fade 1.6s ease forwards;
+}
+.orbit-celebrate-card {
+  pointer-events: none;
+  min-width: min(320px, 90vw);
+  max-width: 360px;
+  padding: 1.35rem 1.5rem;
+  border-radius: 16px;
+  background: #0f172a;
+  border: 1px solid rgba(52, 211, 153, 0.5);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #e2e8f0;
+  animation: orbit-celebrate-pop 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.orbit-celebrate-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #6ee7b7;
+}
+.orbit-celebrate-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.45;
+}
+.orbit-celebrate-xp {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-weight: 800;
+  color: #ffe699;
+  font-size: 0.95rem;
+}
+.orbit-celebrate-burst span {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #70d6ff;
+  animation: orbit-spark 0.9s ease-out forwards;
+  pointer-events: none;
+}
+@keyframes orbit-celebrate-pop {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@keyframes orbit-celebrate-fade {
+  0% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes orbit-spark {
+  to { transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0; }
+}
+
+/* ——— Landing: clearer primary CTA hierarchy ——— */
+@media (max-width: 900px) {
+  .hero-section .btn-primary,
+  .hero-section .btn-primary-cyan {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* ——— Form inputs consistency ——— */
+.input-field:focus,
+input.input-field:focus,
+textarea.input-field:focus {
+  border-color: var(--color-primary, #70D6FF) !important;
+  box-shadow: 0 0 0 3px rgba(112, 214, 255, 0.15) !important;
+}
+
+/* ——— Lesson section shells: less repetitive “giant glass” ——— */
+.lesson-section-shell {
+  margin-bottom: 1.5rem;
+}
+
+#progress-achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 1024px) {
+  #progress-achievements-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 480px) {
+  #progress-achievements-grid { grid-template-columns: 1fr !important; }
+}
+
+/* Dashboard decorative chips — quieter */
+.continue-floating-badge {
+  opacity: 0.55 !important;
+  font-size: 0.75rem !important;
+}
+
+/* Course catalog cards: consistent radius */
+.course-card,
+.courses-grid-4 > div {
+  border-radius: 16px;
+}
+
+/* Exam result emphasis without extra noise */
+.exam-result-view .result-score-big,
+#result-score-text {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Sidebar nav item active clarity */
+.nav-item.active {
+  background: rgba(112, 214, 255, 0.12) !important;
+  border-color: rgba(112, 214, 255, 0.28) !important;
+  color: #fff !important;
+}
+
+
+/* JS editor: never transparent caret/text (Python syntax overlay is Python-only) */
+textarea.ide-code-input:not(.syntax-on) {
+  color: #F8FAFC !important;
+  -webkit-text-fill-color: #F8FAFC !important;
+  caret-color: #70D6FF !important;
+}
+textarea.ide-code-input {
+  white-space: pre !important;
+  overflow-x: auto !important;
+  overflow-y: auto !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+/* —— Clean JS challenge editor (no overlay) —— */
+.js-ch {
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(8, 20, 18, 0.9), rgba(10, 14, 26, 0.98));
+  padding: 1.15rem 1.25rem 1.35rem;
+  margin: 1rem 0 1.5rem;
+}
+.js-ch-kicker {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6ee7b7;
+  margin-bottom: 0.35rem;
+}
+.js-ch-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #f8fafc;
+}
+.js-ch-instruction {
+  margin: 0 0 0.75rem;
+  color: #cbd5e1;
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+.js-ch-code-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin: 0.75rem 0 0.4rem;
+}
+.js-ch-editor {
+  display: block;
+  width: 100%;
+  min-height: 180px;
+  box-sizing: border-box;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0b1220;
+  color: #e2e8f0;
+  caret-color: #70d6ff;
+  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  white-space: pre;
+  overflow-x: auto;
+  overflow-y: auto;
+  resize: vertical;
+  tab-size: 2;
+}
+.js-ch-editor:focus {
+  outline: 2px solid rgba(112, 214, 255, 0.45);
+  outline-offset: 1px;
+  border-color: rgba(112, 214, 255, 0.35);
+}
+.js-ch-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.js-ch-result {
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.js-ch-out-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 0.35rem;
+}
+.js-ch-output,
+.js-ch-sol-code {
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  background: #060913;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 2.5rem;
+}
+.js-ch-feedback { margin-top: 0.75rem; }
+.js-ch-fb {
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.js-ch-fb-ok {
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  color: #6ee7b7;
+}
+.js-ch-fb-warn {
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  color: #fde68a;
+}
+.js-ch-fb-error {
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  color: #fecaca;
+}
+.js-ch-fb-info {
+  background: rgba(148, 163, 184, 0.1);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  color: #cbd5e1;
+}
+.js-ch-sol-panel { margin-top: 0.85rem; }
+.js-ch-hint {
+  margin-top: 0.5rem;
+  color: #fde047;
+  font-size: 0.85rem;
+}
+@media (max-width: 640px) {
+  .js-ch-editor { min-height: 150px; font-size: 0.85rem; }
+  .js-ch-actions .btn { flex: 1 1 auto; min-height: 44px; }
+}
+
+.js-ch-header {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #64748b;
+  margin-bottom: 0.35rem;
+}
+.js-ch-status {
+  min-height: 1.25rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-top: 0.35rem;
+}
+.js-ch-sol-note {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+.js-ch-instruction {
+  white-space: pre-wrap;
+}
+
+.lesson-code-fence, .lesson-inline-code {
+  direction: ltr;
+  text-align: left;
+  font-family: "JetBrains Mono", Consolas, monospace;
+}
+.lesson-inline-code {
+  display: inline-block;
+  background: rgba(112,214,255,0.12);
+  border-radius: 4px;
+  padding: 0.05rem 0.35rem;
+  color: #7dd3fc;
+  font-size: 0.9em;
+}

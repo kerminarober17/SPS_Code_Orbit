@@ -1,0 +1,5 @@
+/* ==========================================================================
+   SPS CODE ORBIT - Canonical Stylesheet Bridge
+   Imports root /style.css to maintain a single source of truth across all paths.
+   ========================================================================== */
+@import url('/style.css');

@@ -1,0 +1,4413 @@
+{
+  "exams": [
+    {
+      "chapter_id": "chap-pf-01",
+      "title": "Chapter Exam: Technology All Around Us",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pf-01-1",
+          "question_text": "Which of the following devices relies on a computer program (software) to function?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "A standard wooden pencil"
+            },
+            {
+              "key": "B",
+              "text": "A digital microwave oven with preset timers"
+            },
+            {
+              "key": "C",
+              "text": "A ceramic coffee mug"
+            },
+            {
+              "key": "D",
+              "text": "A metal paperclip"
+            }
+          ],
+          "correct": "B",
+          "explanation": "A digital microwave uses an embedded microchip running software routines to read inputs, manage cook times, and control power."
+        },
+        {
+          "id": "q-chap-pf-01-2",
+          "question_text": "What is the primary difference between Hardware and Software?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Hardware is digital instructions; Software is physical components"
+            },
+            {
+              "key": "B",
+              "text": "Hardware is the physical, touchable parts of a computer; Software is the digital programs that instruct the hardware"
+            },
+            {
+              "key": "C",
+              "text": "Both are the same thing"
+            },
+            {
+              "key": "D",
+              "text": "Software can be touched; Hardware cannot"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Hardware refers to the physical components you can touch (CPU, RAM, screen, keyboard). Software refers to the digital programs and operating systems that tell the hardware what to do."
+        },
+        {
+          "id": "q-chap-pf-01-3",
+          "question_text": "In the Input → Process → Output cycle, which component is primarily responsible for the 'Process' phase?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "The Keyboard"
+            },
+            {
+              "key": "B",
+              "text": "The Monitor"
+            },
+            {
+              "key": "C",
+              "text": "The Central Processing Unit (CPU)"
+            },
+            {
+              "key": "D",
+              "text": "The Power Cable"
+            }
+          ],
+          "correct": "C",
+          "explanation": "The CPU is the primary computational brain that handles processing calculations and logical instructions."
+        },
+        {
+          "id": "q-chap-pf-01-4",
+          "question_text": "In digital circuits, the 'ON' state represents the digit ____, and the 'OFF' state represents the digit ____.",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "0 then 1"
+            },
+            {
+              "key": "B",
+              "text": "1 then 0"
+            },
+            {
+              "key": "C",
+              "text": "2 then 1"
+            },
+            {
+              "key": "D",
+              "text": "1 then 2"
+            }
+          ],
+          "correct": "B",
+          "explanation": "In binary logic, electricity flowing (ON) is represented by 1, and electricity stopped (OFF) is represented by 0."
+        },
+        {
+          "id": "q-chap-pf-01-5",
+          "question_text": "Why do programmers write code in high-level languages like Python instead of writing 0s and 1s directly?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Because high-level languages are slower than 0s and 1s"
+            },
+            {
+              "key": "B",
+              "text": "Because programming languages are close to human language and are translated automatically into binary"
+            },
+            {
+              "key": "C",
+              "text": "Because computers cannot actually understand binary"
+            },
+            {
+              "key": "D",
+              "text": "Because 0s and 1s are forbidden in modern software"
+            }
+          ],
+          "correct": "B",
+          "explanation": "High-level languages allow humans to write readable, logical code, while compilers and interpreters translate that code into binary (0s and 1s) for the computer."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pf-02",
+      "title": "Chapter Exam: What is a Program?",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pf-02-1",
+          "question_text": "What is the most accurate definition of a computer program?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "A random collection of graphics and colors"
+            },
+            {
+              "key": "B",
+              "text": "A precise, ordered sequence of instructions guiding a computer to solve a task or achieve a goal"
+            },
+            {
+              "key": "C",
+              "text": "A metal wire placed inside the screen"
+            },
+            {
+              "key": "D",
+              "text": "An audio song file"
+            }
+          ],
+          "correct": "B",
+          "explanation": "A computer program is a systematic, sequential set of instructions designed to direct a machine toward a specific outcome."
+        },
+        {
+          "id": "q-chap-pf-02-2",
+          "question_text": "In what order does a computer read and execute code instructions by default?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Randomly depending on processor temperature"
+            },
+            {
+              "key": "B",
+              "text": "From bottom to top"
+            },
+            {
+              "key": "C",
+              "text": "Line-by-line from top to bottom in strict sequence"
+            },
+            {
+              "key": "D",
+              "text": "All lines simultaneously at the same instant"
+            }
+          ],
+          "correct": "C",
+          "explanation": "Computers execute instructions sequentially, starting from the first line down to the last line in order."
+        },
+        {
+          "id": "q-chap-pf-02-3",
+          "question_text": "In a video game: 'If player coins reach 100, award an extra life.' What programming concept is this?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "A Loop"
+            },
+            {
+              "key": "B",
+              "text": "A Condition (IF Statement)"
+            },
+            {
+              "key": "C",
+              "text": "Hardware component"
+            },
+            {
+              "key": "D",
+              "text": "Compiler"
+            }
+          ],
+          "correct": "B",
+          "explanation": "This is a conditional statement: when the condition (coins >= 100) becomes True, the reward is granted."
+        },
+        {
+          "id": "q-chap-pf-02-4",
+          "question_text": "Which scenario represents the best use of a loop with a stopping condition?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Adding two numbers together once"
+            },
+            {
+              "key": "B",
+              "text": "Continuing to prompt the user for their password until they enter the correct one"
+            },
+            {
+              "key": "C",
+              "text": "Displaying the title of a website"
+            },
+            {
+              "key": "D",
+              "text": "Closing a laptop lid"
+            }
+          ],
+          "correct": "B",
+          "explanation": "The attempt repeats continuously in a loop and stops only when the condition (password is correct) is satisfied."
+        },
+        {
+          "id": "q-chap-pf-02-5",
+          "question_text": "Why are loops considered one of the most powerful tools in software development?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "They make code much longer and harder to read"
+            },
+            {
+              "key": "B",
+              "text": "They eliminate repetitive manual code and automate huge workloads with speed and efficiency"
+            },
+            {
+              "key": "C",
+              "text": "They turn monitors into touchscreens"
+            },
+            {
+              "key": "D",
+              "text": "They remove the need for a processor"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Loops eliminate redundant code and allow programmers to process thousands of items effortlessly."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pf-03",
+      "title": "Chapter Exam: Algorithms — The Art of Problem Solving",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pf-03-1",
+          "question_text": "What are the three essential requirements of any valid algorithm?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "It must be in English, contain pictures, and run on a phone"
+            },
+            {
+              "key": "B",
+              "text": "It must be Clear (unambiguous), Finite (has an end), and Effective (solves the problem)"
+            },
+            {
+              "key": "C",
+              "text": "It must contain at least 1,000 steps"
+            },
+            {
+              "key": "D",
+              "text": "It must use colors"
+            }
+          ],
+          "correct": "B",
+          "explanation": "A proper algorithm must have unambiguous steps, terminate after a finite number of steps, and correctly solve the intended problem."
+        },
+        {
+          "id": "q-chap-pf-03-2",
+          "question_text": "In standard flowchart diagrams, what does the Diamond shape represent?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Start or end of the program"
+            },
+            {
+              "key": "B",
+              "text": "A standard calculation or process"
+            },
+            {
+              "key": "C",
+              "text": "A decision point asking a question with Yes/No branches"
+            },
+            {
+              "key": "D",
+              "text": "Printing on paper"
+            }
+          ],
+          "correct": "C",
+          "explanation": "The diamond symbol represents a decision or condition where logic splits into two paths (True/Yes or False/No)."
+        },
+        {
+          "id": "q-chap-pf-03-3",
+          "question_text": "Can a computer execute pseudocode directly?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Yes, because computers understand all human writing"
+            },
+            {
+              "key": "B",
+              "text": "No, pseudocode is written for humans to plan logic and must be converted to a real programming language to run"
+            },
+            {
+              "key": "C",
+              "text": "Yes, if written in capital letters"
+            },
+            {
+              "key": "D",
+              "text": "Yes, if it has no spelling errors"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Pseudocode is an informal design tool for human readers; machines require actual programming languages."
+        },
+        {
+          "id": "q-chap-pf-03-4",
+          "question_text": "Forgetting to close a parenthesis ) or quotation mark \" is what type of error?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Syntax Error"
+            },
+            {
+              "key": "B",
+              "text": "Logic Error"
+            },
+            {
+              "key": "C",
+              "text": "Hardware failure"
+            },
+            {
+              "key": "D",
+              "text": "Network Error"
+            }
+          ],
+          "correct": "A",
+          "explanation": "Forgetting required symbols like parentheses or quotes violates the grammar rules of the language, causing a Syntax Error that prevents the program from running."
+        },
+        {
+          "id": "q-chap-pf-03-5",
+          "question_text": "What is the key difference between an algorithm and code?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "An algorithm is the logical plan to solve a problem; code is that plan written in a specific programming language"
+            },
+            {
+              "key": "B",
+              "text": "An algorithm works only on laptops, while code works only on phones"
+            },
+            {
+              "key": "C",
+              "text": "There is no difference; they are 100% identical"
+            },
+            {
+              "key": "D",
+              "text": "Only robots can understand algorithms"
+            }
+          ],
+          "correct": "A",
+          "explanation": "An algorithm is the abstract problem-solving strategy, while code is its practical implementation in Python, JavaScript, C++, etc."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pf-04",
+      "title": "Chapter Exam: Speaking to Computers in Plain English?",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pf-04-1",
+          "question_text": "Which of the following is easiest for a beginner human to read and understand?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Machine Code (01001000 01100101)"
+            },
+            {
+              "key": "B",
+              "text": "Assembly Language"
+            },
+            {
+              "key": "C",
+              "text": "Python (print('Hello'))"
+            },
+            {
+              "key": "D",
+              "text": "Hexadecimal memory dumps"
+            }
+          ],
+          "correct": "C",
+          "explanation": "Python was intentionally designed with clean, English-like syntax to maximize human readability."
+        },
+        {
+          "id": "q-chap-pf-04-2",
+          "question_text": "Which programming language is the global #1 choice for Artificial Intelligence (AI) and Data Science?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Python"
+            },
+            {
+              "key": "B",
+              "text": "HTML"
+            },
+            {
+              "key": "C",
+              "text": "CSS"
+            },
+            {
+              "key": "D",
+              "text": "Swift"
+            }
+          ],
+          "correct": "A",
+          "explanation": "Python's massive ecosystem of AI libraries (like TensorFlow and PyTorch) makes it the worldwide standard for AI."
+        },
+        {
+          "id": "q-chap-pf-04-3",
+          "question_text": "If your Python code has a syntax mistake on Line 10, what will the Python interpreter do?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Execute Lines 1 through 9 successfully, then stop at Line 10 and display an error"
+            },
+            {
+              "key": "B",
+              "text": "Refuse to run Line 1 at all"
+            },
+            {
+              "key": "C",
+              "text": "Skip Line 10 silently and run Line 11"
+            },
+            {
+              "key": "D",
+              "text": "Fix the mistake automatically"
+            }
+          ],
+          "correct": "A",
+          "explanation": "Because an interpreter executes line-by-line, it runs preceding lines until it encounters the invalid instruction."
+        },
+        {
+          "id": "q-chap-pf-04-4",
+          "question_text": "In Python, what does a line starting with a hashtag (#) signify?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "A secret command for the processor"
+            },
+            {
+              "key": "B",
+              "text": "A comment for human readers that the computer completely ignores"
+            },
+            {
+              "key": "C",
+              "text": "A symbol that disconnects Wi-Fi"
+            },
+            {
+              "key": "D",
+              "text": "An order to delete all files"
+            }
+          ],
+          "correct": "B",
+          "explanation": "The # symbol marks a comment: notes written by developers to explain code to teammates and themselves."
+        },
+        {
+          "id": "q-chap-pf-04-5",
+          "question_text": "What is the primary difference between a Compiler and an Interpreter?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "A Compiler translates the entire program into machine code beforehand, while an Interpreter translates and executes line-by-line on the fly"
+            },
+            {
+              "key": "B",
+              "text": "Compilers only work on phones; Interpreters only work on laptops"
+            },
+            {
+              "key": "C",
+              "text": "Interpreters remove the need for electricity"
+            },
+            {
+              "key": "D",
+              "text": "There is no difference"
+            }
+          ],
+          "correct": "A",
+          "explanation": "Compilers produce standalone machine executables in advance, while interpreters translate instructions dynamically during execution."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pf-05",
+      "title": "Chapter Exam: The World of the Web",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pf-05-1",
+          "question_text": "The unique digital address assigned to every device connected to the internet is known as an:",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "IP Address"
+            },
+            {
+              "key": "B",
+              "text": "RAM Number"
+            },
+            {
+              "key": "C",
+              "text": "CPU Clock"
+            },
+            {
+              "key": "D",
+              "text": "Binary Tag"
+            }
+          ],
+          "correct": "A",
+          "explanation": "An IP (Internet Protocol) address acts as a unique digital street address routing data packets directly to your device."
+        },
+        {
+          "id": "q-chap-pf-05-2",
+          "question_text": "When you open a website in your browser, who is the Client and who is the Server?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "The remote server is the Client; your browser is the Server"
+            },
+            {
+              "key": "B",
+              "text": "Your web browser is the Client requesting content; the remote host computer is the Server responding with files"
+            },
+            {
+              "key": "C",
+              "text": "Both are Clients simultaneously"
+            },
+            {
+              "key": "D",
+              "text": "Both are Servers"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Your browser (Client) initiates an HTTP request, and the web host (Server) serves the response containing HTML, CSS, and JS files."
+        },
+        {
+          "id": "q-chap-pf-05-3",
+          "question_text": "A button reads 'Buy Now', is styled in vibrant green, and displays a popup 'Item Added!' when clicked. What handles each piece in order?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "HTML creates the button → CSS styles it green → JavaScript handles the click popup"
+            },
+            {
+              "key": "B",
+              "text": "CSS creates the button → JavaScript styles it → HTML handles the click"
+            },
+            {
+              "key": "C",
+              "text": "JavaScript handles all three"
+            },
+            {
+              "key": "D",
+              "text": "HTML handles all three"
+            }
+          ],
+          "correct": "A",
+          "explanation": "HTML supplies the button element, CSS applies the green styling, and JavaScript responds to the click event."
+        },
+        {
+          "id": "q-chap-pf-05-4",
+          "question_text": "What does the 'S' stand for in HTTPS (https://)?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Speed"
+            },
+            {
+              "key": "B",
+              "text": "Secure (Encrypted connection)"
+            },
+            {
+              "key": "C",
+              "text": "Software"
+            },
+            {
+              "key": "D",
+              "text": "Server"
+            }
+          ],
+          "correct": "B",
+          "explanation": "HTTPS stands for HyperText Transfer Protocol Secure, meaning data transmitted between client and server is encrypted."
+        },
+        {
+          "id": "q-chap-pf-05-5",
+          "question_text": "What three core file types does a server send to your browser to render a complete webpage?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "HTML, CSS, JavaScript"
+            },
+            {
+              "key": "B",
+              "text": "Word, Excel, PowerPoint"
+            },
+            {
+              "key": "C",
+              "text": "Python, C++, Java"
+            },
+            {
+              "key": "D",
+              "text": "Windows, macOS, Linux"
+            }
+          ],
+          "correct": "A",
+          "explanation": "Webpages are built using HTML for content structure, CSS for visual styles, and JavaScript for interactivity."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pf-06",
+      "title": "Chapter Exam: Choose Your Track",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pf-06-1",
+          "question_text": "In which of the following technological domains does Python lead the entire industry?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Artificial Intelligence (AI) and Data Science"
+            },
+            {
+              "key": "B",
+              "text": "Creating phone wallpaper designs only"
+            },
+            {
+              "key": "C",
+              "text": "Video editing software"
+            },
+            {
+              "key": "D",
+              "text": "Old TV hardware"
+            }
+          ],
+          "correct": "A",
+          "explanation": "Python is the undisputed leader in AI and Data Science thanks to top libraries like PyTorch and TensorFlow."
+        },
+        {
+          "id": "q-chap-pf-06-2",
+          "question_text": "What unique capability makes JavaScript completely different from every other programming language?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "It only works on Mac computers"
+            },
+            {
+              "key": "B",
+              "text": "It is the only programming language natively built into and supported by all web browsers worldwide"
+            },
+            {
+              "key": "C",
+              "text": "It is free while all other languages cost money"
+            },
+            {
+              "key": "D",
+              "text": "It contains zero bugs"
+            }
+          ],
+          "correct": "B",
+          "explanation": "JavaScript is the sole scripting language supported natively by every web browser on Earth without plugins."
+        },
+        {
+          "id": "q-chap-pf-06-3",
+          "question_text": "Designing how video thumbnails appear on Instagram and styling the heart like button is the job of:",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Frontend Developer"
+            },
+            {
+              "key": "B",
+              "text": "Backend Developer"
+            },
+            {
+              "key": "C",
+              "text": "Database Administrator only"
+            },
+            {
+              "key": "D",
+              "text": "Hardware engineer"
+            }
+          ],
+          "correct": "A",
+          "explanation": "Everything visual and interactive that users see and touch on screen is crafted by frontend developers."
+        },
+        {
+          "id": "q-chap-pf-06-4",
+          "question_text": "What title is given to a software engineer who can build both the Frontend and the Backend of an application?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Full-Stack Developer"
+            },
+            {
+              "key": "B",
+              "text": "Hardware Engineer"
+            },
+            {
+              "key": "C",
+              "text": "Cable Technician"
+            },
+            {
+              "key": "D",
+              "text": "Data Cable Specialist"
+            }
+          ],
+          "correct": "A",
+          "explanation": "A Full-Stack Developer has the versatile skillset to build client-side interfaces and server-side logic."
+        },
+        {
+          "id": "q-chap-pf-06-5",
+          "question_text": "What is the best mindset when writing your first lines of real code?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Giving up whenever an error message appears"
+            },
+            {
+              "key": "B",
+              "text": "Reading error messages calmly, experimenting with hands-on practice, and knowing that every bug is a learning step"
+            },
+            {
+              "key": "C",
+              "text": "Copy-pasting without understanding"
+            },
+            {
+              "key": "D",
+              "text": "Avoiding running code"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Great programmers embrace challenges, learn from debugging, and build expertise through active practice."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyf-01",
+      "title": "Chapter Exam: The Python Interpreter & Script Execution",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyf-01-1",
+          "question_text": "What happens when you run a Python script?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "The computer translates the entire program into binary before running anything"
+            },
+            {
+              "key": "B",
+              "text": "The Python interpreter reads the program from top to bottom and executes each statement immediately"
+            },
+            {
+              "key": "C",
+              "text": "Python waits for all syntax errors to be fixed before starting"
+            },
+            {
+              "key": "D",
+              "text": "Only the last line of the script is executed"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Python is an interpreted language. The interpreter reads and executes the code line by line from top to bottom."
+        },
+        {
+          "id": "q-chap-pyf-01-2",
+          "question_text": "What does the `end` parameter of the `print()` function control?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "The separator between multiple items"
+            },
+            {
+              "key": "B",
+              "text": "What is printed at the very end of the line (default is a newline)"
+            },
+            {
+              "key": "C",
+              "text": "The color of the text"
+            },
+            {
+              "key": "D",
+              "text": "How many times the text is printed"
+            }
+          ],
+          "correct": "B",
+          "explanation": "By default `end='\\n'`. You can change it (for example `end=' '`) to keep the next print on the same line."
+        },
+        {
+          "id": "q-chap-pyf-01-3",
+          "question_text": "What does the Python interpreter do with everything written after the `#` symbol on a line?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "It treats it as an error"
+            },
+            {
+              "key": "B",
+              "text": "It ignores it completely (it is a comment)"
+            },
+            {
+              "key": "C",
+              "text": "It executes it as code"
+            },
+            {
+              "key": "D",
+              "text": "It prints it to the screen"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Single-line comments start with `#`. The interpreter ignores everything after the `#` on that line."
+        },
+        {
+          "id": "q-chap-pyf-01-4",
+          "question_text": "What is the difference between a SyntaxError and a logical error?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "There is no difference"
+            },
+            {
+              "key": "B",
+              "text": "A SyntaxError violates Python grammar so the code will not even start; a logical error runs but produces the wrong result"
+            },
+            {
+              "key": "C",
+              "text": "A logical error prevents the program from starting"
+            },
+            {
+              "key": "D",
+              "text": "SyntaxError only happens with numbers"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Syntax errors are caught during parsing before any line runs. Logical (or runtime) errors occur while the program is executing and produce incorrect results."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyf-02",
+      "title": "Chapter Exam: Variables, Types & Memory Binding",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyf-02-1",
+          "question_text": "Does Python require you to declare the type of a variable before creating it?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Yes, you must always write the type first"
+            },
+            {
+              "key": "B",
+              "text": "No, Python is dynamically typed and determines the type from the assigned value"
+            },
+            {
+              "key": "C",
+              "text": "Only for numbers"
+            },
+            {
+              "key": "D",
+              "text": "Only for strings"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Python is dynamically typed. It inspects the value you assign and automatically assigns the appropriate type."
+        },
+        {
+          "id": "q-chap-pyf-02-2",
+          "question_text": "What happens when you reassign a variable in Python?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "The old value is permanently deleted from memory"
+            },
+            {
+              "key": "B",
+              "text": "The variable name is rebound to a new value in memory"
+            },
+            {
+              "key": "C",
+              "text": "The type of the variable can never change"
+            },
+            {
+              "key": "D",
+              "text": "An error always occurs"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Variables in Python are labels bound to objects in memory. Reassignment simply points the label to a different object."
+        },
+        {
+          "id": "q-chap-pyf-02-3",
+          "question_text": "Which function converts the string `\"12.5\"` into a number that can be used in calculations?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "int()"
+            },
+            {
+              "key": "B",
+              "text": "float()"
+            },
+            {
+              "key": "C",
+              "text": "str()"
+            },
+            {
+              "key": "D",
+              "text": "bool()"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`float(\"12.5\")` converts the string to a floating-point number so you can perform arithmetic with it."
+        },
+        {
+          "id": "q-chap-pyf-02-4",
+          "question_text": "What is the modern and cleanest way to embed variables inside a string in Python 3.6+?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Using the + operator and str()"
+            },
+            {
+              "key": "B",
+              "text": "Using f-strings: `f\"Value: {x}\"`"
+            },
+            {
+              "key": "C",
+              "text": "Using the % operator only"
+            },
+            {
+              "key": "D",
+              "text": "Using .format() only"
+            }
+          ],
+          "correct": "B",
+          "explanation": "f-strings (formatted string literals) allow you to write expressions directly inside curly braces after placing an `f` before the quotes."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyf-03",
+      "title": "Chapter Exam: Arithmetic, Modulo & Expressions",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyf-03-1",
+          "question_text": "According to operator precedence (PEMDAS), what is the value of `10 + 2 * 5`?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "60"
+            },
+            {
+              "key": "B",
+              "text": "20"
+            },
+            {
+              "key": "C",
+              "text": "12"
+            },
+            {
+              "key": "D",
+              "text": "50"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Multiplication has higher precedence than addition, so `2 * 5` is calculated first (10), then `10 + 10 = 20`."
+        },
+        {
+          "id": "q-chap-pyf-03-2",
+          "question_text": "What does the modulo operator `%` return?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "The integer quotient of a division"
+            },
+            {
+              "key": "B",
+              "text": "The remainder of a division"
+            },
+            {
+              "key": "C",
+              "text": "The floating-point result of a division"
+            },
+            {
+              "key": "D",
+              "text": "The absolute value"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`%` returns the remainder after division. For example, `14 % 4` equals 2."
+        },
+        {
+          "id": "q-chap-pyf-03-3",
+          "question_text": "What is the short way to write `score = score + 10`?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "score =+ 10"
+            },
+            {
+              "key": "B",
+              "text": "score += 10"
+            },
+            {
+              "key": "C",
+              "text": "score ++ 10"
+            },
+            {
+              "key": "D",
+              "text": "score = 10+"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`+=` is the compound assignment operator. `score += 10` is equivalent to `score = score + 10`."
+        },
+        {
+          "id": "q-chap-pyf-03-5",
+          "question_text": "What is the result of `28 % 5`?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "5.6"
+            },
+            {
+              "key": "B",
+              "text": "5"
+            },
+            {
+              "key": "C",
+              "text": "3"
+            },
+            {
+              "key": "D",
+              "text": "0"
+            }
+          ],
+          "correct": "C",
+          "explanation": "5 goes into 28 five times (25), leaving a remainder of 3."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyf-04",
+      "title": "Chapter Exam: Boolean Expressions & Conditional Branching",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyf-04-1",
+          "question_text": "Which operator checks if two values are NOT equal?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "=="
+            },
+            {
+              "key": "B",
+              "text": "!="
+            },
+            {
+              "key": "C",
+              "text": "<>"
+            },
+            {
+              "key": "D",
+              "text": "=!"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`!=` is the “not equal” comparison operator in Python."
+        },
+        {
+          "id": "q-chap-pyf-04-2",
+          "question_text": "What does the `and` logical operator require?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "At least one operand must be True"
+            },
+            {
+              "key": "B",
+              "text": "Both operands must be True"
+            },
+            {
+              "key": "C",
+              "text": "Exactly one operand must be True"
+            },
+            {
+              "key": "D",
+              "text": "Both operands must be False"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`and` returns True only when both sides are True."
+        },
+        {
+          "id": "q-chap-pyf-04-3",
+          "question_text": "In an `if-elif-else` ladder, what happens when the first condition is True?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Python still checks all remaining elif and else branches"
+            },
+            {
+              "key": "B",
+              "text": "Python executes that branch and skips all remaining elif and else branches"
+            },
+            {
+              "key": "C",
+              "text": "Python executes every branch"
+            },
+            {
+              "key": "D",
+              "text": "An error occurs"
+            }
+          ],
+          "correct": "B",
+          "explanation": "As soon as one branch succeeds, Python executes its block and skips the rest of the ladder."
+        },
+        {
+          "id": "q-chap-pyf-04-4",
+          "question_text": "What does the chained comparison `20 <= pressure <= 50` mean?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "pressure >= 20 or pressure <= 50"
+            },
+            {
+              "key": "B",
+              "text": "pressure >= 20 and pressure <= 50"
+            },
+            {
+              "key": "C",
+              "text": "pressure == 20 or pressure == 50"
+            },
+            {
+              "key": "D",
+              "text": "pressure is between 20 and 50 exclusive"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Python allows mathematical chaining. `20 <= pressure <= 50` is shorthand for `pressure >= 20 and pressure <= 50`."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyf-05",
+      "title": "Chapter Exam: Iteration & Sequences with for Loops",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyf-05-1",
+          "question_text": "How does Python’s `for` loop iterate over a list?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "You must always use index numbers"
+            },
+            {
+              "key": "B",
+              "text": "It acts as a for-each loop and visits every element automatically"
+            },
+            {
+              "key": "C",
+              "text": "It only works with numbers"
+            },
+            {
+              "key": "D",
+              "text": "It requires a while condition"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Python’s `for` loop is a direct sequence iterator: `for item in items:` grabs each item one by one."
+        },
+        {
+          "id": "q-chap-pyf-05-2",
+          "question_text": "What does `range(start, stop, step)` generate?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Numbers from start up to and including stop, stepping by step"
+            },
+            {
+              "key": "B",
+              "text": "Numbers from start up to (but not including) stop, stepping by step"
+            },
+            {
+              "key": "C",
+              "text": "Only even numbers"
+            },
+            {
+              "key": "D",
+              "text": "A list of strings"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`range` stops before the stop value. Example: `range(0, 15, 5)` produces 0, 5, 10."
+        },
+        {
+          "id": "q-chap-pyf-05-3",
+          "question_text": "What is the Accumulator Pattern?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "A way to reverse a list"
+            },
+            {
+              "key": "B",
+              "text": "Initializing a total (or count) outside the loop and updating it inside the loop"
+            },
+            {
+              "key": "C",
+              "text": "A special type of for loop"
+            },
+            {
+              "key": "D",
+              "text": "A method that only works with dictionaries"
+            }
+          ],
+          "correct": "B",
+          "explanation": "You create a running total or count variable before the loop and add to it on every iteration."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyf-06",
+      "title": "Chapter Exam: Event-Driven & State-Based while Loops",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyf-06-1",
+          "question_text": "What is a sentinel value in a while loop?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "A special signal value that tells the loop to stop"
+            },
+            {
+              "key": "B",
+              "text": "The first value printed by the loop"
+            },
+            {
+              "key": "C",
+              "text": "A random number generator"
+            },
+            {
+              "key": "D",
+              "text": "The maximum number of iterations"
+            }
+          ],
+          "correct": "A",
+          "explanation": "A sentinel is a special value (like 0 or \"quit\") that causes the loop condition to become False and stop the loop."
+        },
+        {
+          "id": "q-chap-pyf-06-2",
+          "question_text": "What is a common way to control a while loop using a boolean flag?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Set a flag to True before the loop and change it to False inside the loop when you want to stop"
+            },
+            {
+              "key": "B",
+              "text": "Always use range()"
+            },
+            {
+              "key": "C",
+              "text": "Flags only work with for loops"
+            },
+            {
+              "key": "D",
+              "text": "Flags are not allowed in Python"
+            }
+          ],
+          "correct": "A",
+          "explanation": "A boolean flag (e.g., `is_running = True`) is checked in the while condition and set to False when the loop should end."
+        },
+        {
+          "id": "q-chap-pyf-06-3",
+          "question_text": "What does the `break` statement do inside a loop?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Skips the current iteration and continues with the next one"
+            },
+            {
+              "key": "B",
+              "text": "Immediately terminates the enclosing loop"
+            },
+            {
+              "key": "C",
+              "text": "Restarts the loop from the beginning"
+            },
+            {
+              "key": "D",
+              "text": "Prints an error message"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`break` exits the loop immediately, regardless of the loop condition."
+        },
+        {
+          "id": "q-chap-pyf-06-4",
+          "question_text": "What is the purpose of an input validation loop?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "To make the program run faster"
+            },
+            {
+              "key": "B",
+              "text": "To keep asking the user for input until the data is valid"
+            },
+            {
+              "key": "C",
+              "text": "To convert all input to strings"
+            },
+            {
+              "key": "D",
+              "text": "To skip invalid input without asking again"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Validation loops repeatedly prompt the user until the entered data meets the required constraints."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyf-07",
+      "title": "Chapter Exam: String Manipulation & Slicing",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyf-07-1",
+          "question_text": "What does negative indexing do with strings?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "It causes an error"
+            },
+            {
+              "key": "B",
+              "text": "It counts backwards from the end of the string (-1 is the last character)"
+            },
+            {
+              "key": "C",
+              "text": "It reverses the string"
+            },
+            {
+              "key": "D",
+              "text": "It only works with numbers"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`string[-1]` gives the last character, `string[-2]` the second-to-last, and so on."
+        },
+        {
+          "id": "q-chap-pyf-07-2",
+          "question_text": "What does the slice `code[0:4]` return for `code = \"TELEMETRY\"`?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "\"TELE\""
+            },
+            {
+              "key": "B",
+              "text": "\"TELEM\""
+            },
+            {
+              "key": "C",
+              "text": "\"T\""
+            },
+            {
+              "key": "D",
+              "text": "\"TELEMETRY\""
+            }
+          ],
+          "correct": "A",
+          "explanation": "Slicing `[start:stop]` extracts characters from start up to (but not including) stop. Indices 0-3 are T, E, L, E."
+        },
+        {
+          "id": "q-chap-pyf-07-3",
+          "question_text": "What does the method `.upper()` do to a string?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "It modifies the original string in place"
+            },
+            {
+              "key": "B",
+              "text": "It returns a new string with all characters converted to uppercase"
+            },
+            {
+              "key": "C",
+              "text": "It converts only the first letter"
+            },
+            {
+              "key": "D",
+              "text": "It deletes the string"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Strings are immutable. Methods like `.upper()` return a new string; the original remains unchanged."
+        },
+        {
+          "id": "q-chap-pyf-07-4",
+          "question_text": "What does `\"X10:Y20\".split(\":\")` return?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "\"X10Y20\""
+            },
+            {
+              "key": "B",
+              "text": "['X10', 'Y20']"
+            },
+            {
+              "key": "C",
+              "text": "\"X10\""
+            },
+            {
+              "key": "D",
+              "text": "An error"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`.split(sep)` divides the string at every occurrence of the separator and returns a list of the resulting pieces."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyf-08",
+      "title": "Chapter Exam: Lists & Sequence Operations",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyf-08-1",
+          "question_text": "Are lists mutable in Python?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "No, lists cannot be changed after creation"
+            },
+            {
+              "key": "B",
+              "text": "Yes, you can change elements, add, and remove items after creation"
+            },
+            {
+              "key": "C",
+              "text": "Only if they contain numbers"
+            },
+            {
+              "key": "D",
+              "text": "Only with special permission"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Lists are mutable. You can update items with index assignment, and use methods like append, insert, pop, and remove."
+        },
+        {
+          "id": "q-chap-pyf-08-2",
+          "question_text": "What is the difference between `.append(x)` and `.insert(i, x)`?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "append adds at the beginning; insert adds at the end"
+            },
+            {
+              "key": "B",
+              "text": "append always adds to the end; insert adds at a specific index"
+            },
+            {
+              "key": "C",
+              "text": "They do exactly the same thing"
+            },
+            {
+              "key": "D",
+              "text": "insert only works with numbers"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`.append(x)` adds to the very end. `.insert(index, x)` injects the item at the given position."
+        },
+        {
+          "id": "q-chap-pyf-08-3",
+          "question_text": "Which built-in function returns the largest value in a list of numbers?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "sum()"
+            },
+            {
+              "key": "B",
+              "text": "len()"
+            },
+            {
+              "key": "C",
+              "text": "max()"
+            },
+            {
+              "key": "D",
+              "text": "min()"
+            }
+          ],
+          "correct": "C",
+          "explanation": "`max(list)` returns the maximum value. Related functions are `min()`, `sum()`, and `len()`."
+        },
+        {
+          "id": "q-chap-pyf-08-4",
+          "question_text": "What is the difference between `list.sort()` and `sorted(list)`?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "They are identical"
+            },
+            {
+              "key": "B",
+              "text": "list.sort() modifies the original list in place; sorted(list) returns a new sorted list and leaves the original unchanged"
+            },
+            {
+              "key": "C",
+              "text": "sorted() is faster"
+            },
+            {
+              "key": "D",
+              "text": "list.sort() only works with strings"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`.sort()` changes the list itself. `sorted()` creates and returns a brand-new sorted copy."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyf-09",
+      "title": "Chapter Exam: Dictionaries & Key-Value Mapping",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyf-09-1",
+          "question_text": "How do you create a dictionary in Python?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Using square brackets []"
+            },
+            {
+              "key": "B",
+              "text": "Using curly braces {} with key: value pairs"
+            },
+            {
+              "key": "C",
+              "text": "Using parentheses ()"
+            },
+            {
+              "key": "D",
+              "text": "Using the keyword dict only"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Dictionaries are written with curly braces and colon-separated key-value pairs: `{\"name\": \"Alex\", \"age\": 14}`."
+        },
+        {
+          "id": "q-chap-pyf-09-2",
+          "question_text": "How do you add a new key-value pair to an existing dictionary?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Use the append() method"
+            },
+            {
+              "key": "B",
+              "text": "Assign to it: `dict['new_key'] = new_value`"
+            },
+            {
+              "key": "C",
+              "text": "Use the insert() method"
+            },
+            {
+              "key": "D",
+              "text": "Dictionaries cannot be changed"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Assigning to a key either updates the value if the key exists or inserts a new key-value pair if it does not."
+        },
+        {
+          "id": "q-chap-pyf-09-3",
+          "question_text": "Which method allows you to loop over both keys and values at the same time?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": ".keys()"
+            },
+            {
+              "key": "B",
+              "text": ".values()"
+            },
+            {
+              "key": "C",
+              "text": ".items()"
+            },
+            {
+              "key": "D",
+              "text": ".get()"
+            }
+          ],
+          "correct": "C",
+          "explanation": "`.items()` returns (key, value) pairs that you can unpack in a for loop: `for k, v in d.items():`."
+        },
+        {
+          "id": "q-chap-pyf-09-4",
+          "question_text": "What is a common way to model a collection of records (like students or crew members)?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "A single dictionary"
+            },
+            {
+              "key": "B",
+              "text": "A list of dictionaries"
+            },
+            {
+              "key": "C",
+              "text": "A tuple of numbers"
+            },
+            {
+              "key": "D",
+              "text": "A set of strings"
+            }
+          ],
+          "correct": "B",
+          "explanation": "A list containing dictionary objects is the standard way to represent tables, databases, and JSON-like data."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyf-10",
+      "title": "Chapter Exam: Modular Functions & Reusable Logic",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyf-10-1",
+          "question_text": "What is the difference between a parameter and an argument?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "They are the same thing"
+            },
+            {
+              "key": "B",
+              "text": "Parameters are the variable names in the function definition; arguments are the actual values passed when calling the function"
+            },
+            {
+              "key": "C",
+              "text": "Arguments are written in the def line; parameters are used when calling"
+            },
+            {
+              "key": "D",
+              "text": "Parameters can only be numbers"
+            }
+          ],
+          "correct": "B",
+          "explanation": "In `def compute_speed(distance, time):` the names distance and time are parameters. In `compute_speed(100, 2)` the values 100 and 2 are arguments."
+        },
+        {
+          "id": "q-chap-pyf-10-2",
+          "question_text": "Why is it better for a function to return a value instead of just printing it?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Printing is faster"
+            },
+            {
+              "key": "B",
+              "text": "Returning a value lets other parts of the program reuse, store, or calculate with that result"
+            },
+            {
+              "key": "C",
+              "text": "Returning always causes an error"
+            },
+            {
+              "key": "D",
+              "text": "Printing is not allowed inside functions"
+            }
+          ],
+          "correct": "B",
+          "explanation": "A pure function that returns a value is predictable, testable, and reusable. Printing is a side effect."
+        },
+        {
+          "id": "q-chap-pyf-10-3",
+          "question_text": "What is the scope of a variable created inside a function?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Global – it can be seen everywhere"
+            },
+            {
+              "key": "B",
+              "text": "Local – it only exists while that function is running"
+            },
+            {
+              "key": "C",
+              "text": "It depends on the variable name"
+            },
+            {
+              "key": "D",
+              "text": "It becomes permanent after the first call"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Variables defined inside functions are local. They disappear when the function returns."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyl2-01",
+      "title": "Chapter Exam: Strings — Going Deeper",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyl2-01-1",
+          "question_text": "What does the slice `\"SPS Code Orbit\"[4:8]` return?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "\"SPS \""
+            },
+            {
+              "key": "B",
+              "text": "\"Code\""
+            },
+            {
+              "key": "C",
+              "text": "\"Cod\""
+            },
+            {
+              "key": "D",
+              "text": "\" Cod\""
+            }
+          ],
+          "correct": "B",
+          "explanation": "Indexing starts at 0. `[4:8]` takes characters at positions 4, 5, 6, 7 which are C, o, d, e."
+        },
+        {
+          "id": "q-chap-pyl2-01-2",
+          "question_text": "You run `result = \"Hello\".replace(\"l\", \"r\")` then `print(\"Hello\")`. What prints?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "\"Herro\""
+            },
+            {
+              "key": "B",
+              "text": "\"Hello\""
+            },
+            {
+              "key": "C",
+              "text": "Nothing — the replace modified in place"
+            },
+            {
+              "key": "D",
+              "text": "SyntaxError"
+            }
+          ],
+          "correct": "B",
+          "explanation": "String methods never modify the original string because strings are immutable. `.replace()` returns a new string. We printed the original unchanged string."
+        },
+        {
+          "id": "q-chap-pyl2-01-3",
+          "question_text": "What does `f\"{3.14159:.2f}\"` produce?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "\"3.14159\""
+            },
+            {
+              "key": "B",
+              "text": "\"3.14\""
+            },
+            {
+              "key": "C",
+              "text": "\"3.1\""
+            },
+            {
+              "key": "D",
+              "text": "\"3.142\""
+            }
+          ],
+          "correct": "B",
+          "explanation": "`:.2f` means format as a float with exactly 2 decimal places. Python rounds the result."
+        },
+        {
+          "id": "q-chap-pyl2-01-4",
+          "question_text": "A student writes `words = sentence.split()` then `print(len(words))`. What does this print?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "The number of characters in the sentence"
+            },
+            {
+              "key": "B",
+              "text": "The number of words in the sentence"
+            },
+            {
+              "key": "C",
+              "text": "The number of unique words"
+            },
+            {
+              "key": "D",
+              "text": "Always 1"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`.split()` without arguments splits on spaces and returns a list of words. `len()` of that list gives the word count."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyl2-02",
+      "title": "Chapter Exam: Key-Value Storage — Dictionaries",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyl2-02-1",
+          "question_text": "What happens when you run `d = {\"x\": 1}` then `print(d[\"y\"])`?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Prints `None`"
+            },
+            {
+              "key": "B",
+              "text": "Prints `0`"
+            },
+            {
+              "key": "C",
+              "text": "Raises a `KeyError`"
+            },
+            {
+              "key": "D",
+              "text": "Prints `\"y\"`"
+            }
+          ],
+          "correct": "C",
+          "explanation": "Accessing a key that does not exist raises a KeyError. Use `.get()` to avoid the crash."
+        },
+        {
+          "id": "q-chap-pyl2-02-2",
+          "question_text": "`scores = {\"Ali\": 80}`. What does `scores.get(\"Sara\", 0)` return?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "`KeyError`"
+            },
+            {
+              "key": "B",
+              "text": "`None`"
+            },
+            {
+              "key": "C",
+              "text": "`0`"
+            },
+            {
+              "key": "D",
+              "text": "`\"Sara\"`"
+            }
+          ],
+          "correct": "C",
+          "explanation": "`.get(\"Sara\", 0)` looks for the key. Because it does not exist, it returns the provided default value 0."
+        },
+        {
+          "id": "q-chap-pyl2-02-3",
+          "question_text": "What does `for key, value in my_dict.items():` do?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Loops through only the keys"
+            },
+            {
+              "key": "B",
+              "text": "Loops through only the values"
+            },
+            {
+              "key": "C",
+              "text": "Loops through each key-value pair together"
+            },
+            {
+              "key": "D",
+              "text": "Raises a SyntaxError"
+            }
+          ],
+          "correct": "C",
+          "explanation": "`.items()` returns pairs like `(\"Ahmed\", 95)`. Python unpacks each pair into `key` and `value`."
+        },
+        {
+          "id": "q-chap-pyl2-02-4",
+          "question_text": "In the grade book program, why is `grade_book.get(name)` better than `grade_book[name]` for the lookup function?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "`.get()` is faster for large dictionaries"
+            },
+            {
+              "key": "B",
+              "text": "`.get()` returns `None` instead of crashing when the name does not exist"
+            },
+            {
+              "key": "C",
+              "text": "`dict[key]` only works with integer keys"
+            },
+            {
+              "key": "D",
+              "text": "There is no difference"
+            }
+          ],
+          "correct": "B",
+          "explanation": "If a student is not in the grade book, `dict[key]` raises KeyError. `.get()` safely returns None so you can print a friendly message."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyl2-03",
+      "title": "Chapter Exam: Tuples and Sets",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyl2-03-1",
+          "question_text": "What is the main characteristic of a tuple?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "It can be changed after creation"
+            },
+            {
+              "key": "B",
+              "text": "It is an immutable sequence"
+            },
+            {
+              "key": "C",
+              "text": "It stores only unique values"
+            },
+            {
+              "key": "D",
+              "text": "It uses curly braces"
+            }
+          ],
+          "correct": "B",
+          "explanation": "A tuple is like a list with a lock — once created, its contents cannot be changed."
+        },
+        {
+          "id": "q-chap-pyl2-03-2",
+          "question_text": "How do you create a single-element tuple?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "`(42)`"
+            },
+            {
+              "key": "B",
+              "text": "`(42,)`"
+            },
+            {
+              "key": "C",
+              "text": "`[42]`"
+            },
+            {
+              "key": "D",
+              "text": "`{42}`"
+            }
+          ],
+          "correct": "B",
+          "explanation": "A single-element tuple needs a trailing comma: `(42,)`. Without the comma it is just the integer 42."
+        },
+        {
+          "id": "q-chap-pyl2-03-3",
+          "question_text": "What is the main purpose of a set?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "To store ordered data that can be changed"
+            },
+            {
+              "key": "B",
+              "text": "To store unique values only"
+            },
+            {
+              "key": "C",
+              "text": "To store key-value pairs"
+            },
+            {
+              "key": "D",
+              "text": "To replace lists completely"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Sets automatically keep only unique values and are useful for membership tests and removing duplicates."
+        },
+        {
+          "id": "q-chap-pyl2-03-4",
+          "question_text": "What is the output of `a, b = (5, 10)` then `a, b = b, a` then `print(a, b)`?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "`5 10`"
+            },
+            {
+              "key": "B",
+              "text": "`10 10`"
+            },
+            {
+              "key": "C",
+              "text": "`10 5`"
+            },
+            {
+              "key": "D",
+              "text": "`SyntaxError`"
+            }
+          ],
+          "correct": "C",
+          "explanation": "First assignment gives a=5, b=10. Then `a, b = b, a` swaps them, resulting in a=10, b=5."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyl2-04",
+      "title": "Chapter Exam: File I/O",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyl2-04-1",
+          "question_text": "Which mode opens a file for writing and creates it if it does not exist (overwriting existing content)?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "\"r\""
+            },
+            {
+              "key": "B",
+              "text": "\"a\""
+            },
+            {
+              "key": "C",
+              "text": "\"w\""
+            },
+            {
+              "key": "D",
+              "text": "\"x\""
+            }
+          ],
+          "correct": "C",
+          "explanation": "Mode \"w\" opens for writing. If the file exists it is truncated; if not it is created."
+        },
+        {
+          "id": "q-chap-pyl2-04-2",
+          "question_text": "What is the recommended way to open a file so that it is automatically closed?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Remember to call close() every time"
+            },
+            {
+              "key": "B",
+              "text": "Use a `with` statement"
+            },
+            {
+              "key": "C",
+              "text": "Never close files"
+            },
+            {
+              "key": "D",
+              "text": "Use open() only"
+            }
+          ],
+          "correct": "B",
+          "explanation": "The `with` statement guarantees the file is closed even if an error occurs."
+        },
+        {
+          "id": "q-chap-pyl2-04-3",
+          "question_text": "Which module is commonly used for reading and writing CSV files?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "math"
+            },
+            {
+              "key": "B",
+              "text": "csv"
+            },
+            {
+              "key": "C",
+              "text": "random"
+            },
+            {
+              "key": "D",
+              "text": "os"
+            }
+          ],
+          "correct": "B",
+          "explanation": "The built-in `csv` module provides reader and writer objects for working with comma-separated values."
+        },
+        {
+          "id": "q-chap-pyl2-04-4",
+          "question_text": "What does `os.path.exists(filename)` return?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "The size of the file"
+            },
+            {
+              "key": "B",
+              "text": "True if the file or path exists, False otherwise"
+            },
+            {
+              "key": "C",
+              "text": "The content of the file"
+            },
+            {
+              "key": "D",
+              "text": "An error if the file does not exist"
+            }
+          ],
+          "correct": "B",
+          "explanation": "It is a safe way to check whether a file exists before trying to open it."
+        },
+        {
+          "id": "q-chap-pyl2-04-5",
+          "question_text": "What will happen if you try to open a non-existent file in \"r\" mode without checking first?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "An empty file is created"
+            },
+            {
+              "key": "B",
+              "text": "A FileNotFoundError is raised"
+            },
+            {
+              "key": "C",
+              "text": "None is returned"
+            },
+            {
+              "key": "D",
+              "text": "The program continues silently"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Reading a missing file raises FileNotFoundError. Always check existence or use try/except."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyl2-05",
+      "title": "Chapter Exam: Modules",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyl2-05-1",
+          "question_text": "Which statement correctly imports only the `sqrt` function from the math module?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "`import math.sqrt`"
+            },
+            {
+              "key": "B",
+              "text": "`from math import sqrt`"
+            },
+            {
+              "key": "C",
+              "text": "`import sqrt from math`"
+            },
+            {
+              "key": "D",
+              "text": "`math import sqrt`"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`from module import name` brings a specific name into the current namespace."
+        },
+        {
+          "id": "q-chap-pyl2-05-2",
+          "question_text": "What does the `random` module provide?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Mathematical constants only"
+            },
+            {
+              "key": "B",
+              "text": "Functions for generating random numbers and making random choices"
+            },
+            {
+              "key": "C",
+              "text": "File system operations"
+            },
+            {
+              "key": "D",
+              "text": "Date and time handling"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`random` is used for simulations, games, and any task that needs unpredictability."
+        },
+        {
+          "id": "q-chap-pyl2-05-3",
+          "question_text": "Which module is used to work with dates and times?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "os"
+            },
+            {
+              "key": "B",
+              "text": "datetime"
+            },
+            {
+              "key": "C",
+              "text": "math"
+            },
+            {
+              "key": "D",
+              "text": "csv"
+            }
+          ],
+          "correct": "B",
+          "explanation": "The `datetime` module provides classes for manipulating dates and times."
+        },
+        {
+          "id": "q-chap-pyl2-05-4",
+          "question_text": "What does `import os` allow you to do?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Perform mathematical calculations"
+            },
+            {
+              "key": "B",
+              "text": "Interact with the operating system (paths, files, environment)"
+            },
+            {
+              "key": "C",
+              "text": "Generate random numbers"
+            },
+            {
+              "key": "D",
+              "text": "Parse CSV files"
+            }
+          ],
+          "correct": "B",
+          "explanation": "The `os` module gives access to operating-system functionality such as checking if a path exists."
+        },
+        {
+          "id": "q-chap-pyl2-05-5",
+          "question_text": "What is the difference between `import math` and `from math import pi`?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "There is no difference"
+            },
+            {
+              "key": "B",
+              "text": "`import math` requires `math.pi`; `from math import pi` lets you use `pi` directly"
+            },
+            {
+              "key": "C",
+              "text": "`from math import pi` imports the whole module"
+            },
+            {
+              "key": "D",
+              "text": "`import math` is faster"
+            }
+          ],
+          "correct": "B",
+          "explanation": "The first style keeps the module namespace; the second brings the name into the local namespace."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyl2-06",
+      "title": "Chapter Exam: Error Handling",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyl2-06-1",
+          "question_text": "What is the purpose of a `try / except` block?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "To make code run faster"
+            },
+            {
+              "key": "B",
+              "text": "To catch and handle errors so the program does not crash"
+            },
+            {
+              "key": "C",
+              "text": "To declare variables"
+            },
+            {
+              "key": "D",
+              "text": "To import modules"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Code that might fail is placed in the `try` block. If an exception occurs, the matching `except` block runs instead of crashing."
+        },
+        {
+          "id": "q-chap-pyl2-06-2",
+          "question_text": "What does the `finally` clause do?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "It runs only when an error occurs"
+            },
+            {
+              "key": "B",
+              "text": "It always runs, whether an error occurred or not"
+            },
+            {
+              "key": "C",
+              "text": "It skips the rest of the code"
+            },
+            {
+              "key": "D",
+              "text": "It is required in every try block"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`finally` is useful for cleanup actions (closing files, releasing resources) that must happen in every case."
+        },
+        {
+          "id": "q-chap-pyl2-06-3",
+          "question_text": "What is a good practice when asking the user for a number?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Assume the user always types a valid number"
+            },
+            {
+              "key": "B",
+              "text": "Use a loop with try/except to keep asking until a valid number is entered"
+            },
+            {
+              "key": "C",
+              "text": "Convert the input without checking"
+            },
+            {
+              "key": "D",
+              "text": "Never use input()"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Bulletproof input functions repeatedly prompt the user until the conversion succeeds."
+        },
+        {
+          "id": "q-chap-pyl2-06-4",
+          "question_text": "What keyword is used to deliberately raise an exception?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "throw"
+            },
+            {
+              "key": "B",
+              "text": "raise"
+            },
+            {
+              "key": "C",
+              "text": "error"
+            },
+            {
+              "key": "D",
+              "text": "except"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`raise ValueError(\"message\")` creates and raises an exception of the specified type."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyl2-07",
+      "title": "Chapter Exam: Comprehensions",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyl2-07-1",
+          "question_text": "What does the following list comprehension produce?\n\n```python\n[x*2 for x in range(5)]\n```",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "[0, 1, 2, 3, 4]"
+            },
+            {
+              "key": "B",
+              "text": "[0, 2, 4, 6, 8]"
+            },
+            {
+              "key": "C",
+              "text": "[2, 4, 6, 8, 10]"
+            },
+            {
+              "key": "D",
+              "text": "An error"
+            }
+          ],
+          "correct": "B",
+          "explanation": "It multiplies every number from 0 to 4 by 2."
+        },
+        {
+          "id": "q-chap-pyl2-07-2",
+          "question_text": "How do you filter items inside a list comprehension?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Using an if clause at the end"
+            },
+            {
+              "key": "B",
+              "text": "Using a while loop"
+            },
+            {
+              "key": "C",
+              "text": "Using try/except"
+            },
+            {
+              "key": "D",
+              "text": "Filtering is not possible"
+            }
+          ],
+          "correct": "A",
+          "explanation": "Example: `[x for x in numbers if x > 0]` keeps only positive numbers."
+        },
+        {
+          "id": "q-chap-pyl2-07-3",
+          "question_text": "What is a dictionary comprehension?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "A way to create lists only"
+            },
+            {
+              "key": "B",
+              "text": "A concise way to build a dictionary from an iterable"
+            },
+            {
+              "key": "C",
+              "text": "A method that only works with sets"
+            },
+            {
+              "key": "D",
+              "text": "Syntax for deleting keys"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Example: `{name: len(name) for name in names}` creates a dict mapping each name to its length."
+        },
+        {
+          "id": "q-chap-pyl2-07-4",
+          "question_text": "What does the following produce?\n\n```python\n{x for x in [1, 2, 2, 3, 3, 3]}\n```",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "{1, 2, 3}"
+            },
+            {
+              "key": "B",
+              "text": "[1, 2, 2, 3, 3, 3]"
+            },
+            {
+              "key": "C",
+              "text": "{1:1, 2:2, 3:3}"
+            },
+            {
+              "key": "D",
+              "text": "An error"
+            }
+          ],
+          "correct": "A",
+          "explanation": "A set comprehension automatically removes duplicates."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyl2-08",
+      "title": "Chapter Exam: Advanced Functions",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyl2-08-1",
+          "question_text": "What does a default argument look like in a function definition?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "`def greet(name = \"Guest\"):`"
+            },
+            {
+              "key": "B",
+              "text": "`def greet(name == \"Guest\"):`"
+            },
+            {
+              "key": "C",
+              "text": "`def greet(name -> \"Guest\"):`"
+            },
+            {
+              "key": "D",
+              "text": "Default arguments are not allowed"
+            }
+          ],
+          "correct": "A",
+          "explanation": "You assign a default value with `=` in the parameter list."
+        },
+        {
+          "id": "q-chap-pyl2-08-2",
+          "question_text": "What do `*args` and `**kwargs` allow?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Only one argument"
+            },
+            {
+              "key": "B",
+              "text": "A variable number of positional and keyword arguments"
+            },
+            {
+              "key": "C",
+              "text": "Only keyword arguments"
+            },
+            {
+              "key": "D",
+              "text": "They are used for returning values"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`*args` collects extra positional arguments into a tuple; `**kwargs` collects extra keyword arguments into a dictionary."
+        },
+        {
+          "id": "q-chap-pyl2-08-3",
+          "question_text": "What is a lambda function?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "A long multi-line function"
+            },
+            {
+              "key": "B",
+              "text": "A small anonymous function defined with the `lambda` keyword"
+            },
+            {
+              "key": "C",
+              "text": "A function that can only return None"
+            },
+            {
+              "key": "D",
+              "text": "A type of loop"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Example: `square = lambda x: x * x`"
+        },
+        {
+          "id": "q-chap-pyl2-08-4",
+          "question_text": "What is the scope rule for a variable created inside a function?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "It is global by default"
+            },
+            {
+              "key": "B",
+              "text": "It is local to that function"
+            },
+            {
+              "key": "C",
+              "text": "It can be seen by all other functions automatically"
+            },
+            {
+              "key": "D",
+              "text": "Scope does not exist in Python"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Variables defined inside a function are local unless declared with the `global` keyword."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyl2-09",
+      "title": "Chapter Exam: OOP Introduction",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyl2-09-1",
+          "question_text": "Why must `self` always be the first parameter of every method in a class?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "It is optional — Python works fine without it"
+            },
+            {
+              "key": "B",
+              "text": "Python automatically passes the object instance as the first argument when a method is called"
+            },
+            {
+              "key": "C",
+              "text": "`self` stores the class name"
+            },
+            {
+              "key": "D",
+              "text": "It initialises the object"
+            }
+          ],
+          "correct": "B",
+          "explanation": "When you call `s.greet()`, Python translates it to `Student.greet(s)`. The method receives the object as `self`."
+        },
+        {
+          "id": "q-chap-pyl2-09-2",
+          "question_text": "What is the special method that runs automatically when you create a new object?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "`__str__`"
+            },
+            {
+              "key": "B",
+              "text": "`__init__`"
+            },
+            {
+              "key": "C",
+              "text": "`__main__`"
+            },
+            {
+              "key": "D",
+              "text": "`__call__`"
+            }
+          ],
+          "correct": "B",
+          "explanation": "`__init__` is the constructor. It is called when you write `Student(\"Ahmed\", 10, 95)`."
+        },
+        {
+          "id": "q-chap-pyl2-09-3",
+          "question_text": "What does a method inside a class represent?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Data stored in the object"
+            },
+            {
+              "key": "B",
+              "text": "Behavior — what the object can do using its own data"
+            },
+            {
+              "key": "C",
+              "text": "The name of the class"
+            },
+            {
+              "key": "D",
+              "text": "A global function"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Methods are functions that belong to the class and can use `self` to access the object’s attributes."
+        },
+        {
+          "id": "q-chap-pyl2-09-4",
+          "question_text": "In the Classroom class, `self.students.append(Student(name, grade, score))` does what?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Prints the student's data"
+            },
+            {
+              "key": "B",
+              "text": "Creates a new Student object and adds it to the Classroom’s list of students"
+            },
+            {
+              "key": "C",
+              "text": "Adds a copy of the Classroom to the Student"
+            },
+            {
+              "key": "D",
+              "text": "Raises a NameError"
+            }
+          ],
+          "correct": "B",
+          "explanation": "This is how one class manages a collection of objects of another class."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-pyl2-10",
+      "title": "Chapter Exam: Capstone — Building a Real Python Project",
+      "description": "Chapter assessment. Pass threshold: 60%.",
+      "questions": [
+        {
+          "id": "q-chap-pyl2-10-1",
+          "question_text": "Why is time spent planning before coding considered professional practice?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Companies require documentation for legal reasons"
+            },
+            {
+              "key": "B",
+              "text": "Planning reveals design problems early — when they are cheap to fix in comments, not expensive to fix in code"
+            },
+            {
+              "key": "C",
+              "text": "Clients want to see planning documents"
+            },
+            {
+              "key": "D",
+              "text": "Python requires a plan file before running"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Problems found in a plan take seconds to fix. Problems found after coding take hours to refactor."
+        },
+        {
+          "id": "q-chap-pyl2-10-2",
+          "question_text": "What Python data structure best represents a single student with a name, grade, and list of scores?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "A list like [\"Shady\", 10, [95, 87, 92]]"
+            },
+            {
+              "key": "B",
+              "text": "A class with name, grade, and scores attributes"
+            },
+            {
+              "key": "C",
+              "text": "A dictionary with random keys"
+            },
+            {
+              "key": "D",
+              "text": "A tuple — because it is immutable"
+            }
+          ],
+          "correct": "B",
+          "explanation": "A class bundles data (attributes) and behavior (methods) together — the core idea of OOP."
+        },
+        {
+          "id": "q-chap-pyl2-10-3",
+          "question_text": "When saving student data to CSV and reloading it, which function should you call FIRST on startup?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "save_to_file() — to make sure the file exists"
+            },
+            {
+              "key": "B",
+              "text": "load_from_file() — to restore previous session data"
+            },
+            {
+              "key": "C",
+              "text": "print_report() — to display what is saved"
+            },
+            {
+              "key": "D",
+              "text": "add_student() — to add a test student first"
+            }
+          ],
+          "correct": "B",
+          "explanation": "On startup, load any previously saved data. If no file exists, start with an empty roster."
+        },
+        {
+          "id": "q-chap-pyl2-10-4",
+          "question_text": "What makes a Student Management System a “real program” rather than just practice code?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "It has more than 100 lines"
+            },
+            {
+              "key": "B",
+              "text": "It uses classes"
+            },
+            {
+              "key": "C",
+              "text": "It persists data, handles all user errors gracefully, and solves a genuine real-world problem"
+            },
+            {
+              "key": "D",
+              "text": "It imports modules"
+            }
+          ],
+          "correct": "C",
+          "explanation": "Persistence, robustness, and usefulness are the marks of production-quality code."
+        },
+        {
+          "id": "q-chap-pyl2-10-5",
+          "question_text": "In the finished Student Management System, what should happen if the user enters a score of 101?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "The score is accepted and saved"
+            },
+            {
+              "key": "B",
+              "text": "The program crashes"
+            },
+            {
+              "key": "C",
+              "text": "The input is rejected with a clear message and the user is asked again"
+            },
+            {
+              "key": "D",
+              "text": "The score is automatically set to 100"
+            }
+          ],
+          "correct": "C",
+          "explanation": "Robust input validation rejects out-of-range values and keeps asking until valid data is provided."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-fe1-01",
+      "title": "Chapter Exam: Understanding the Web and HTML",
+      "description": "Comprehensive chapter assessment covering core Frontend topics.",
+      "questions": [
+        {
+          "id": "q-web-1-1",
+          "question_text": "Which declaration must be placed at the very top of an HTML5 document before any tags?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "<html>"
+            },
+            {
+              "key": "B",
+              "text": "<!DOCTYPE html>"
+            },
+            {
+              "key": "C",
+              "text": "<head>"
+            },
+            {
+              "key": "D",
+              "text": "<meta charset='UTF-8'>"
+            }
+          ],
+          "correct": "B",
+          "explanation": "<!DOCTYPE html> is the mandatory standard declaration that tells the browser to render the document using the HTML5 specification."
+        },
+        {
+          "id": "q-web-1-2",
+          "question_text": "What is the correct structural hierarchy for heading elements in HTML?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "<h1> is the primary main title down to <h6> as the smallest sub-heading"
+            },
+            {
+              "key": "B",
+              "text": "<h6> is the main title and <h1> is the smallest heading"
+            },
+            {
+              "key": "C",
+              "text": "Heading tags all render in identical font size"
+            },
+            {
+              "key": "D",
+              "text": "Headings must always be wrapped inside paragraph <p> tags"
+            }
+          ],
+          "correct": "A",
+          "explanation": "<h1> represents the top-level main heading on a page, with <h2> through <h6> providing nested sub-section ranks."
+        },
+        {
+          "id": "q-web-1-3",
+          "question_text": "What is the semantic difference between the <strong> tag and the <b> tag?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "<b> is for paragraphs and <strong> is for headings"
+            },
+            {
+              "key": "B",
+              "text": "<strong> indicates high structural importance for accessibility, while <b> is purely visual bold text"
+            },
+            {
+              "key": "C",
+              "text": "<strong> changes the text color to red"
+            },
+            {
+              "key": "D",
+              "text": "There is no difference; <b> is the newer HTML5 replacement"
+            }
+          ],
+          "correct": "B",
+          "explanation": "<strong> carries semantic weight for screen readers and search engines, whereas <b> applies bold styling without extra emphasis."
+        },
+        {
+          "id": "q-web-1-4",
+          "question_text": "Why are elements like <br> and <hr> referred to as 'void' or self-closing tags?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "They delete content from the browser window"
+            },
+            {
+              "key": "B",
+              "text": "They do not enclose text content and therefore do not require a closing tag"
+            },
+            {
+              "key": "C",
+              "text": "They are only valid inside the <head> element"
+            },
+            {
+              "key": "D",
+              "text": "They can only be executed by JavaScript"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Void tags like <br> (line break) and <hr> (horizontal rule) insert standalone structural elements without wrapping around inner text."
+        },
+        {
+          "id": "q-web-1-5",
+          "question_text": "What will the browser display for the following snippet?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Raw HTML code printed as text"
+            },
+            {
+              "key": "B",
+              "text": "A large bold title 'Orbit Terminal' followed by a paragraph with italicized 'Online & Ready'"
+            },
+            {
+              "key": "C",
+              "text": "An error message indicating unclosed tags"
+            },
+            {
+              "key": "D",
+              "text": "Two equal sized headings side by side"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Browsers render <h1> as a prominent title block and <em> as emphasized italic text inside the paragraph."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-fe1-02",
+      "title": "Chapter Exam: HTML Content and Navigation",
+      "description": "Comprehensive chapter assessment covering core Frontend topics.",
+      "questions": [
+        {
+          "id": "q-web-2-1",
+          "question_text": "Which HTML element is used to create a bulleted (unordered) list?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "<ol>"
+            },
+            {
+              "key": "B",
+              "text": "<ul>"
+            },
+            {
+              "key": "C",
+              "text": "<list>"
+            },
+            {
+              "key": "D",
+              "text": "<dl>"
+            }
+          ],
+          "correct": "B",
+          "explanation": "<ul> creates an Unordered List (rendered with bullets), whereas <ol> creates an Ordered List (rendered with numbers)."
+        },
+        {
+          "id": "q-web-2-2",
+          "question_text": "What is the only valid direct child element allowed inside an <ol> or <ul> list container?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "<p>"
+            },
+            {
+              "key": "B",
+              "text": "<li>"
+            },
+            {
+              "key": "C",
+              "text": "<span>"
+            },
+            {
+              "key": "D",
+              "text": "<div>"
+            }
+          ],
+          "correct": "B",
+          "explanation": "List items must be wrapped directly in <li> tags inside list containers to maintain valid HTML syntax and accessibility."
+        },
+        {
+          "id": "q-web-2-3",
+          "question_text": "Which HTML element should be used to format long multi-line quotations from external sources?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "<q>"
+            },
+            {
+              "key": "B",
+              "text": "<blockquote>"
+            },
+            {
+              "key": "C",
+              "text": "<cite>"
+            },
+            {
+              "key": "D",
+              "text": "<p style='italic'>"
+            }
+          ],
+          "correct": "B",
+          "explanation": "<blockquote> is the semantic element for block-level quotes (usually indented by browsers), while <q> is for short inline quotes."
+        },
+        {
+          "id": "q-web-2-4",
+          "question_text": "Which tag is specifically designed to represent computer code snippets in a monospace font?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "<pre>"
+            },
+            {
+              "key": "B",
+              "text": "<code>"
+            },
+            {
+              "key": "C",
+              "text": "<samp>"
+            },
+            {
+              "key": "D",
+              "text": "<var>"
+            }
+          ],
+          "correct": "B",
+          "explanation": "The <code> tag marks technical code snippets inline, often paired with <pre> to preserve white spaces and line breaks."
+        },
+        {
+          "id": "q-web-2-5",
+          "question_text": "What output will the browser render for this list?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Two bulleted items"
+            },
+            {
+              "key": "B",
+              "text": "A numbered list: 1. Pre-flight checklist and 2. Engine ignition"
+            },
+            {
+              "key": "C",
+              "text": "A continuous sentence separated by commas"
+            },
+            {
+              "key": "D",
+              "text": "Two unformatted bold headings"
+            }
+          ],
+          "correct": "B",
+          "explanation": "<ol> automatically numbers sequential list items starting at 1."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-fe1-03",
+      "title": "Chapter Exam: HTML Data and Forms",
+      "description": "Comprehensive chapter assessment covering core Frontend topics.",
+      "questions": [
+        {
+          "id": "q-web-3-1",
+          "question_text": "Which attribute of the <a> tag specifies the destination URL or target path of a hyperlink?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "src"
+            },
+            {
+              "key": "B",
+              "text": "href"
+            },
+            {
+              "key": "C",
+              "text": "target"
+            },
+            {
+              "key": "D",
+              "text": "link"
+            }
+          ],
+          "correct": "B",
+          "explanation": "href (Hypertext Reference) specifies the web address or anchor fragment the link points to."
+        },
+        {
+          "id": "q-web-3-2",
+          "question_text": "When opening links in a new browser tab using target='_blank', which attribute combination should always be added for security?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "rel='noopener noreferrer'"
+            },
+            {
+              "key": "B",
+              "text": "security='high'"
+            },
+            {
+              "key": "C",
+              "text": "type='external'"
+            },
+            {
+              "key": "D",
+              "text": "mode='sandbox'"
+            }
+          ],
+          "correct": "A",
+          "explanation": "rel='noopener noreferrer' prevents the newly opened tab from accessing window.opener and stealing session references."
+        },
+        {
+          "id": "q-web-3-3",
+          "question_text": "How do you create an in-page bookmark link that jumps directly to an element with id='mission-specs'?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "<a href='id:mission-specs'>"
+            },
+            {
+              "key": "B",
+              "text": "<a href='#mission-specs'>"
+            },
+            {
+              "key": "C",
+              "text": "<a target='mission-specs'>"
+            },
+            {
+              "key": "D",
+              "text": "<a src='@mission-specs'>"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Using a hashtag prefix (#) in the href targets matching element IDs on the current page."
+        },
+        {
+          "id": "q-web-3-4",
+          "question_text": "What is the key difference between a relative URL ('/docs/manual.html') and an absolute URL ('https://sps.edu/docs/manual.html')?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Relative URLs only work on mobile devices"
+            },
+            {
+              "key": "B",
+              "text": "Relative URLs link to files on the same domain, while absolute URLs specify the full web protocol and domain name"
+            },
+            {
+              "key": "C",
+              "text": "Absolute URLs load slower because they are encrypted"
+            },
+            {
+              "key": "D",
+              "text": "There is no difference"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Relative paths depend on the site structure location, whereas absolute paths contain complete internet addresses."
+        },
+        {
+          "id": "q-web-3-5",
+          "question_text": "What type of link is created by <a href='mailto:support@sps.edu'>Send Mail</a>?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "A link to an external web page"
+            },
+            {
+              "key": "B",
+              "text": "A shortcut that opens the user's default email client"
+            },
+            {
+              "key": "C",
+              "text": "An automated file download link"
+            },
+            {
+              "key": "D",
+              "text": "A link that refreshes the page"
+            }
+          ],
+          "correct": "B",
+          "explanation": "The mailto: scheme instructs the OS to launch the default email client with the specified recipient pre-filled."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-fe1-04",
+      "title": "Chapter Exam: Introduction to CSS",
+      "description": "Comprehensive chapter assessment covering core Frontend topics.",
+      "questions": [
+        {
+          "id": "q-web-4-1",
+          "question_text": "Why is the alt attribute mandatory on all <img> elements?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "It sets the visual width of the image"
+            },
+            {
+              "key": "B",
+              "text": "It provides descriptive text for screen readers, SEO indexing, and broken image fallbacks"
+            },
+            {
+              "key": "C",
+              "text": "It forces the image to download automatically"
+            },
+            {
+              "key": "D",
+              "text": "It converts PNG files into JPG format"
+            }
+          ],
+          "correct": "B",
+          "explanation": "The alt attribute is vital for web accessibility, allowing visually impaired users and web crawlers to understand image content."
+        },
+        {
+          "id": "q-web-4-2",
+          "question_text": "Which HTML elements provide a semantic container for wrapping an image along with its caption?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "<div> and <span>"
+            },
+            {
+              "key": "B",
+              "text": "<figure> and <figcaption>"
+            },
+            {
+              "key": "C",
+              "text": "<picture> and <title>"
+            },
+            {
+              "key": "D",
+              "text": "<media> and <label>"
+            }
+          ],
+          "correct": "B",
+          "explanation": "<figure> groups media content, and <figcaption> provides its semantic caption."
+        },
+        {
+          "id": "q-web-4-3",
+          "question_text": "Which attribute must be included on <video> and <audio> tags to display play, pause, and volume controls?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "autoplay"
+            },
+            {
+              "key": "B",
+              "text": "controls"
+            },
+            {
+              "key": "C",
+              "text": "interactive"
+            },
+            {
+              "key": "D",
+              "text": "show-ui"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Without the controls boolean attribute, media players will render hidden without user controls."
+        },
+        {
+          "id": "q-web-4-4",
+          "question_text": "Why do developers place multiple <source> elements inside a <video> or <audio> container?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "To play multiple songs at the exact same time"
+            },
+            {
+              "key": "B",
+              "text": "To offer alternative file formats (e.g., MP4, WebM) for cross-browser playback support"
+            },
+            {
+              "key": "C",
+              "text": "To speed up the playback speed by 2x"
+            },
+            {
+              "key": "D",
+              "text": "To prevent users from right-clicking the video"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Browsers evaluate <source> elements sequentially and play the first file format supported."
+        },
+        {
+          "id": "q-web-4-5",
+          "question_text": "Identify the syntax error in this image element:",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "The src attribute should be named url"
+            },
+            {
+              "key": "B",
+              "text": "<img> is a self-closing void tag and must not have a </img> closing tag"
+            },
+            {
+              "key": "C",
+              "text": "The alt attribute is not allowed on JPG images"
+            },
+            {
+              "key": "D",
+              "text": "Image file names cannot end with .jpg"
+            }
+          ],
+          "correct": "B",
+          "explanation": "<img> is a void element; writing </img> is invalid HTML syntax."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-fe1-05",
+      "title": "Chapter Exam: CSS Layout and Box Model",
+      "description": "Comprehensive chapter assessment covering core Frontend topics.",
+      "questions": [
+        {
+          "id": "q-web-5-1",
+          "question_text": "What is the difference between <th> and <td> inside a table row (<tr>)?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "<th> is for title text outside tables"
+            },
+            {
+              "key": "B",
+              "text": "<th> defines a table header cell (rendered bold & centered), while <td> defines standard table data"
+            },
+            {
+              "key": "C",
+              "text": "<td> is only used in table footers"
+            },
+            {
+              "key": "D",
+              "text": "There is no difference"
+            }
+          ],
+          "correct": "B",
+          "explanation": "<th> represents header cells for columns/rows, while <td> holds data cells."
+        },
+        {
+          "id": "q-web-5-2",
+          "question_text": "Which attribute allows a single table cell to span horizontally across multiple columns?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "rowspan"
+            },
+            {
+              "key": "B",
+              "text": "colspan"
+            },
+            {
+              "key": "C",
+              "text": "grid-span"
+            },
+            {
+              "key": "D",
+              "text": "width"
+            }
+          ],
+          "correct": "B",
+          "explanation": "colspan='2' expands a cell horizontally to occupy two adjacent column widths."
+        },
+        {
+          "id": "q-web-5-3",
+          "question_text": "Which attribute allows a single table cell to span vertically across multiple rows?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "rowspan"
+            },
+            {
+              "key": "B",
+              "text": "colspan"
+            },
+            {
+              "key": "C",
+              "text": "height"
+            },
+            {
+              "key": "D",
+              "text": "v-span"
+            }
+          ],
+          "correct": "A",
+          "explanation": "rowspan='3' stretches a cell vertically down through three table rows."
+        },
+        {
+          "id": "q-web-5-4",
+          "question_text": "Which semantic elements structure content into header, body, and footer sections inside a <table>?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "<header>, <body>, <footer>"
+            },
+            {
+              "key": "B",
+              "text": "<thead>, <tbody>, <tfoot>"
+            },
+            {
+              "key": "C",
+              "text": "<top>, <middle>, <bottom>"
+            },
+            {
+              "key": "D",
+              "text": "<th-group>, <td-group>, <tf-group>"
+            }
+          ],
+          "correct": "B",
+          "explanation": "<thead>, <tbody>, and <tfoot> group table rows semantically for accessibility and scrollable tables."
+        },
+        {
+          "id": "q-web-5-5",
+          "question_text": "If a cell has <td colspan='3'>Payload Summary</td>, how many column slots does it occupy?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "1 slot"
+            },
+            {
+              "key": "B",
+              "text": "3 slots"
+            },
+            {
+              "key": "C",
+              "text": "6 slots"
+            },
+            {
+              "key": "D",
+              "text": "It spans all rows automatically"
+            }
+          ],
+          "correct": "B",
+          "explanation": "colspan='3' instructs the table engine to stretch the cell across 3 horizontal column positions."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-js1-01",
+      "title": "Chapter Exam: Getting Started with JavaScript",
+      "description": "Tests console.log, comments, numbers, strings, and output order only.",
+      "questions": [
+        {
+          "id": "q-js1-01-1",
+          "question_text": "What does console.log(\"Hi\") do?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Saves a file named Hi"
+            },
+            {
+              "key": "B",
+              "text": "Prints Hi to the output/console"
+            },
+            {
+              "key": "C",
+              "text": "Creates an HTML page"
+            },
+            {
+              "key": "D",
+              "text": "Deletes the variable Hi"
+            }
+          ],
+          "correct": "B",
+          "explanation": "console.log displays a value in the output panel."
+        },
+        {
+          "id": "q-js1-01-2",
+          "question_text": "Which of these is a string?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "42"
+            },
+            {
+              "key": "B",
+              "text": "true"
+            },
+            {
+              "key": "C",
+              "text": "\"42\""
+            },
+            {
+              "key": "D",
+              "text": "let"
+            }
+          ],
+          "correct": "C",
+          "explanation": "Strings are written in quotes."
+        },
+        {
+          "id": "q-js1-01-3",
+          "question_text": "What is the result of console.log(2 + 3)?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Prints the text 2 + 3"
+            },
+            {
+              "key": "B",
+              "text": "Prints 5"
+            },
+            {
+              "key": "C",
+              "text": "Creates a variable"
+            },
+            {
+              "key": "D",
+              "text": "Causes an error"
+            }
+          ],
+          "correct": "B",
+          "explanation": "The expression 2+3 is calculated first, then printed."
+        },
+        {
+          "id": "q-js1-01-4",
+          "question_text": "What does a line starting with // do?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Runs twice"
+            },
+            {
+              "key": "B",
+              "text": "Is ignored as a comment"
+            },
+            {
+              "key": "C",
+              "text": "Imports HTML"
+            },
+            {
+              "key": "D",
+              "text": "Starts a loop"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Comments are for humans and are not executed."
+        },
+        {
+          "id": "q-js1-01-5",
+          "question_text": "If you write three console.log statements in order, the output appears:",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "In random order"
+            },
+            {
+              "key": "B",
+              "text": "Bottom to top"
+            },
+            {
+              "key": "C",
+              "text": "Top to bottom in the same order as the statements"
+            },
+            {
+              "key": "D",
+              "text": "Only the last one"
+            }
+          ],
+          "correct": "C",
+          "explanation": "JavaScript runs statements from top to bottom."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-js1-02",
+      "title": "Chapter Exam: Variables and Data",
+      "description": "Tests let, const, assignment, booleans, and typeof only.",
+      "questions": [
+        {
+          "id": "q-js1-02-1",
+          "question_text": "Which keyword creates a variable that can be reassigned later?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "const"
+            },
+            {
+              "key": "B",
+              "text": "let"
+            },
+            {
+              "key": "C",
+              "text": "static"
+            },
+            {
+              "key": "D",
+              "text": "fixed"
+            }
+          ],
+          "correct": "B",
+          "explanation": "let allows reassignment; const does not."
+        },
+        {
+          "id": "q-js1-02-2",
+          "question_text": "After let x = 3; then x = 5; what is stored in x?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "3"
+            },
+            {
+              "key": "B",
+              "text": "5"
+            },
+            {
+              "key": "C",
+              "text": "8"
+            },
+            {
+              "key": "D",
+              "text": "undefined"
+            }
+          ],
+          "correct": "B",
+          "explanation": "The second assignment replaces the value."
+        },
+        {
+          "id": "q-js1-02-3",
+          "question_text": "What are the only two boolean values?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "yes and no"
+            },
+            {
+              "key": "B",
+              "text": "0 and 1"
+            },
+            {
+              "key": "C",
+              "text": "true and false"
+            },
+            {
+              "key": "D",
+              "text": "on and off"
+            }
+          ],
+          "correct": "C",
+          "explanation": "Booleans are true or false."
+        },
+        {
+          "id": "q-js1-02-4",
+          "question_text": "typeof \"Alex\" returns:",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Alex"
+            },
+            {
+              "key": "B",
+              "text": "\"string\""
+            },
+            {
+              "key": "C",
+              "text": "\"number\""
+            },
+            {
+              "key": "D",
+              "text": "variable"
+            }
+          ],
+          "correct": "B",
+          "explanation": "typeof returns the type name."
+        },
+        {
+          "id": "q-js1-02-5",
+          "question_text": "Which is the best use of const?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "A score that increases each level"
+            },
+            {
+              "key": "B",
+              "text": "A school name that should not be reassigned"
+            },
+            {
+              "key": "C",
+              "text": "A loop counter"
+            },
+            {
+              "key": "D",
+              "text": "A value you change every line"
+            }
+          ],
+          "correct": "B",
+          "explanation": "const is for bindings you do not reassign."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-js1-03",
+      "title": "Chapter Exam: Operators and Expressions",
+      "description": "Tests arithmetic, assignment, comparison, and logical operators only.",
+      "questions": [
+        {
+          "id": "q-js1-03-1",
+          "question_text": "What is 10 % 4?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "2.5"
+            },
+            {
+              "key": "B",
+              "text": "2"
+            },
+            {
+              "key": "C",
+              "text": "40"
+            },
+            {
+              "key": "D",
+              "text": "0"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Remainder of 10 divided by 4 is 2."
+        },
+        {
+          "id": "q-js1-03-2",
+          "question_text": "After let n = 2; n += 3; what is n?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "2"
+            },
+            {
+              "key": "B",
+              "text": "3"
+            },
+            {
+              "key": "C",
+              "text": "5"
+            },
+            {
+              "key": "D",
+              "text": "23"
+            }
+          ],
+          "correct": "C",
+          "explanation": "+= adds and stores: 2+3=5."
+        },
+        {
+          "id": "q-js1-03-3",
+          "question_text": "Which comparison checks strict equality?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "="
+            },
+            {
+              "key": "B",
+              "text": "=="
+            },
+            {
+              "key": "C",
+              "text": "==="
+            },
+            {
+              "key": "D",
+              "text": "!==="
+            }
+          ],
+          "correct": "C",
+          "explanation": "=== is strict equality."
+        },
+        {
+          "id": "q-js1-03-4",
+          "question_text": "What does true && false evaluate to?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "true"
+            },
+            {
+              "key": "B",
+              "text": "false"
+            },
+            {
+              "key": "C",
+              "text": "\"truefalse\""
+            },
+            {
+              "key": "D",
+              "text": "1"
+            }
+          ],
+          "correct": "B",
+          "explanation": "AND requires both sides true."
+        },
+        {
+          "id": "q-js1-03-5",
+          "question_text": "What does !true evaluate to?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "true"
+            },
+            {
+              "key": "B",
+              "text": "false"
+            },
+            {
+              "key": "C",
+              "text": "null"
+            },
+            {
+              "key": "D",
+              "text": "0"
+            }
+          ],
+          "correct": "B",
+          "explanation": "NOT flips true to false."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-js1-04",
+      "title": "Chapter Exam: Decisions",
+      "description": "Tests if, else, else if, and logical conditions only — no loops or functions.",
+      "questions": [
+        {
+          "id": "q-js1-04-1",
+          "question_text": "When does the block inside if (score > 50) { ... } run?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Always"
+            },
+            {
+              "key": "B",
+              "text": "Only when score is greater than 50"
+            },
+            {
+              "key": "C",
+              "text": "Only when score is 50"
+            },
+            {
+              "key": "D",
+              "text": "Never"
+            }
+          ],
+          "correct": "B",
+          "explanation": "The block runs when the condition is true."
+        },
+        {
+          "id": "q-js1-04-2",
+          "question_text": "In if/else, how many branches run for one check?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Both"
+            },
+            {
+              "key": "B",
+              "text": "Neither"
+            },
+            {
+              "key": "C",
+              "text": "Exactly one"
+            },
+            {
+              "key": "D",
+              "text": "As many as possible"
+            }
+          ],
+          "correct": "C",
+          "explanation": "Either the if block or the else block runs, not both."
+        },
+        {
+          "id": "q-js1-04-3",
+          "question_text": "else if is used when:",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "You need HTML"
+            },
+            {
+              "key": "B",
+              "text": "You have more than two possible paths to check in order"
+            },
+            {
+              "key": "C",
+              "text": "You want a loop"
+            },
+            {
+              "key": "D",
+              "text": "You define a function"
+            }
+          ],
+          "correct": "B",
+          "explanation": "else if chains extra conditions."
+        },
+        {
+          "id": "q-js1-04-4",
+          "question_text": "if (age >= 13 && ready) requires:",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Only age >= 13"
+            },
+            {
+              "key": "B",
+              "text": "Only ready"
+            },
+            {
+              "key": "C",
+              "text": "Both conditions true"
+            },
+            {
+              "key": "D",
+              "text": "Neither"
+            }
+          ],
+          "correct": "C",
+          "explanation": "&& means both must be true."
+        },
+        {
+          "id": "q-js1-04-5",
+          "question_text": "String comparison \"Hi\" === \"hi\" is:",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "true"
+            },
+            {
+              "key": "B",
+              "text": "false"
+            },
+            {
+              "key": "C",
+              "text": "a syntax error"
+            },
+            {
+              "key": "D",
+              "text": "always true in JavaScript"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Comparisons are case-sensitive."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-js1-05",
+      "title": "Chapter Exam: Loops",
+      "description": "Tests for, while, accumulation, and avoiding infinite loops only.",
+      "questions": [
+        {
+          "id": "q-js1-05-1",
+          "question_text": "A for loop is best when:",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "You need a webpage button"
+            },
+            {
+              "key": "B",
+              "text": "You know how many times to repeat"
+            },
+            {
+              "key": "C",
+              "text": "You only need one if statement"
+            },
+            {
+              "key": "D",
+              "text": "You define a function"
+            }
+          ],
+          "correct": "B",
+          "explanation": "for is ideal for counted repetition."
+        },
+        {
+          "id": "q-js1-05-2",
+          "question_text": "What is the role of the counter variable in a for loop?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "It stores HTML"
+            },
+            {
+              "key": "B",
+              "text": "It tracks progress through the repeats"
+            },
+            {
+              "key": "C",
+              "text": "It disables console.log"
+            },
+            {
+              "key": "D",
+              "text": "It ends the program forever"
+            }
+          ],
+          "correct": "B",
+          "explanation": "The counter updates each iteration."
+        },
+        {
+          "id": "q-js1-05-3",
+          "question_text": "A while loop continues:",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Forever always"
+            },
+            {
+              "key": "B",
+              "text": "While its condition is true"
+            },
+            {
+              "key": "C",
+              "text": "Only once"
+            },
+            {
+              "key": "D",
+              "text": "Only for strings"
+            }
+          ],
+          "correct": "B",
+          "explanation": "while checks the condition before each iteration."
+        },
+        {
+          "id": "q-js1-05-4",
+          "question_text": "An infinite loop happens when:",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "You use console.log"
+            },
+            {
+              "key": "B",
+              "text": "The loop condition never becomes false"
+            },
+            {
+              "key": "C",
+              "text": "You use const"
+            },
+            {
+              "key": "D",
+              "text": "You write a comment"
+            }
+          ],
+          "correct": "B",
+          "explanation": "The stop condition must eventually fail."
+        },
+        {
+          "id": "q-js1-05-5",
+          "question_text": "To sum numbers from 1 to 5 in a loop you typically:",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Only use if/else"
+            },
+            {
+              "key": "B",
+              "text": "Initialize total to 0 and add each number inside the loop"
+            },
+            {
+              "key": "C",
+              "text": "Delete variables each time"
+            },
+            {
+              "key": "D",
+              "text": "Avoid console.log"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Accumulator pattern: start at 0, add each iteration."
+        }
+      ]
+    },
+    {
+      "chapter_id": "chap-js1-06",
+      "title": "Chapter Exam: Functions",
+      "description": "Tests function declaration, calls, parameters, arguments, and return only — no DOM.",
+      "questions": [
+        {
+          "id": "q-js1-06-1",
+          "question_text": "Declaring function hello() { ... } without calling it:",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Runs immediately"
+            },
+            {
+              "key": "B",
+              "text": "Defines the function but does not run the body yet"
+            },
+            {
+              "key": "C",
+              "text": "Creates HTML"
+            },
+            {
+              "key": "D",
+              "text": "Deletes hello"
+            }
+          ],
+          "correct": "B",
+          "explanation": "You must call hello() to run it."
+        },
+        {
+          "id": "q-js1-06-2",
+          "question_text": "In function greet(name) { ... }, name is a:",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Parameter"
+            },
+            {
+              "key": "B",
+              "text": "HTML tag"
+            },
+            {
+              "key": "C",
+              "text": "Loop counter only"
+            },
+            {
+              "key": "D",
+              "text": "Boolean always"
+            }
+          ],
+          "correct": "A",
+          "explanation": "Parameters are placeholders in the definition."
+        },
+        {
+          "id": "q-js1-06-3",
+          "question_text": "In greet(\"Alex\"), \"Alex\" is a:",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Parameter"
+            },
+            {
+              "key": "B",
+              "text": "Argument"
+            },
+            {
+              "key": "C",
+              "text": "const keyword"
+            },
+            {
+              "key": "D",
+              "text": "comment"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Arguments are the actual values passed in."
+        },
+        {
+          "id": "q-js1-06-4",
+          "question_text": "return x + y; in a function:",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Only prints x + y"
+            },
+            {
+              "key": "B",
+              "text": "Sends the value back to the caller"
+            },
+            {
+              "key": "C",
+              "text": "Creates a loop"
+            },
+            {
+              "key": "D",
+              "text": "Ends the whole program always"
+            }
+          ],
+          "correct": "B",
+          "explanation": "return gives a value to the caller."
+        },
+        {
+          "id": "q-js1-06-5",
+          "question_text": "Which statement is true in JavaScript Level 1 as taught here?",
+          "question_type": "multiple_choice",
+          "options": [
+            {
+              "key": "A",
+              "text": "Functions require HTML buttons"
+            },
+            {
+              "key": "B",
+              "text": "Functions group reusable instructions under a name"
+            },
+            {
+              "key": "C",
+              "text": "Functions always need the DOM"
+            },
+            {
+              "key": "D",
+              "text": "Functions replace console.log forever"
+            }
+          ],
+          "correct": "B",
+          "explanation": "Functions organize reusable logic."
+        }
+      ]
+    }
+  ]
+}

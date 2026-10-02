@@ -1,0 +1,1592 @@
+/**
+ * SPS Code Orbit — Responsive & Mobile Layout Architecture
+ * Comprehensive fix for mobile navigation, hero composition, grid collapses,
+ * touch accessibility, and global overflow elimination.
+ * Preserves space/programming visual identity and backend authority.
+ */
+
+/* Universal Icon Shrink Protection */
+[data-lucide],
+svg.lucide,
+i[data-lucide],
+.lucide,
+.brand-orbit-icon,
+.lesson-num-icon,
+.chapter-icon-badge {
+  flex-shrink: 0 !important;
+}
+
+/* ==========================================================================
+   1. Base Reset & Overflow Containment
+   ========================================================================== */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html, body {
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+}
+
+img, video, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.orbital-paths-svg {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  position: absolute;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   2. Buttons & Theme Accents (Space Palette: Cyan & Purple, High Contrast)
+   ========================================================================== */
+.btn,
+.btn-pill,
+button.btn,
+a.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  font-weight: 750;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+  touch-action: manipulation;
+}
+
+.btn-primary,
+.btn-primary-cyan,
+.btn-primary-gradient,
+.btn-electric-cyan,
+.btn-cyan,
+#btn-submit-signup,
+#btn-submit-login,
+button[type="submit"].btn-primary,
+button[type="submit"].btn-pill,
+a.btn-primary-cyan {
+  background: linear-gradient(135deg, #4DB8E8 0%, #6B8CFF 50%, #7C6CF0 100%) !important;
+  color: #070A14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  box-shadow:
+    0 4px 16px rgba(77, 184, 232, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  text-shadow: none !important;
+}
+
+.btn-primary:hover,
+.btn-primary-cyan:hover,
+.btn-primary-gradient:hover,
+.btn-electric-cyan:hover,
+.btn-cyan:hover,
+#btn-submit-signup:hover,
+#btn-submit-login:hover,
+button[type="submit"].btn-primary:hover,
+a.btn-primary-cyan:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #6BC9F0 0%, #8499FF 50%, #9585F5 100%) !important;
+  box-shadow: 0 8px 24px rgba(77, 184, 232, 0.35), 0 0 18px rgba(124, 108, 240, 0.22) !important;
+  color: #070A14 !important;
+}
+
+.btn-glass,
+.btn-secondary,
+.btn-outline {
+  background: rgba(16, 23, 42, 0.75) !important;
+  color: #E2E8F0 !important;
+  border: 1px solid rgba(112, 214, 255, 0.4) !important;
+  box-shadow: 0 0 14px rgba(112, 214, 255, 0.1) !important;
+  backdrop-filter: blur(14px);
+}
+
+.btn-glass:hover,
+.btn-secondary:hover,
+.btn-outline:hover {
+  border-color: rgba(124, 108, 240, 0.55) !important;
+  color: #fff !important;
+  box-shadow: 0 0 18px rgba(112, 214, 255, 0.2) !important;
+  background: rgba(22, 32, 60, 0.9) !important;
+  transform: translateY(-2px);
+}
+
+.btn-white-pill,
+a.btn-white-pill {
+  background: rgba(112, 214, 255, 0.12) !important;
+  color: #DDF6FF !important;
+  border: 1px solid rgba(112, 214, 255, 0.45) !important;
+  box-shadow: 0 0 14px rgba(112, 214, 255, 0.12) !important;
+  font-weight: 750 !important;
+}
+
+.btn-white-pill:hover,
+a.btn-white-pill:hover {
+  background: linear-gradient(135deg, #4DB8E8 0%, #7C6CF0 100%) !important;
+  color: #070A14 !important;
+  box-shadow: 0 0 20px rgba(112, 214, 255, 0.35) !important;
+}
+
+/* Auth Page Stability: No rotation, tilting, or continuous floating on auth form cards */
+.auth-page-card,
+body:has(#login-form) .glass-card,
+body:has(#signup-form) .glass-card {
+  animation: none !important;
+  transform: none !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+body:has(#login-form) .glass-card:hover,
+body:has(#signup-form) .glass-card:hover {
+  transform: none !important;
+}
+
+/* ==========================================================================
+   3. Mobile-only chrome defaults (do NOT override desktop header design)
+   Mobile hamburger/backdrop defaults; desktop restores legacy style.css
+   ========================================================================== */
+.mobile-nav-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(112, 214, 255, 0.35);
+  background: rgba(112, 214, 255, 0.1);
+  color: #70D6FF;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1120;
+  padding: 0;
+  touch-action: manipulation;
+  pointer-events: auto;
+}
+
+.mobile-nav-btn:hover,
+.mobile-nav-btn:focus-visible {
+  background: rgba(112, 214, 255, 0.22);
+  outline: 2px solid #70D6FF;
+  outline-offset: 2px;
+}
+
+.mobile-nav-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 6, 15, 0.82) !important;
+  z-index: 1040;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  pointer-events: none;
+}
+
+.mobile-nav-backdrop.is-open {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-drawer-actions {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  pointer-events: auto;
+  position: relative;
+  z-index: 1112;
+}
+
+.mobile-drawer-actions .drawer-link,
+.mobile-drawer-actions .btn-pill {
+  width: 100%;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* ==========================================================================
+   4. Desktop restoration (min-width: 901px) — legacy desktop header/nav
+   Isolates desktop from mobile drawer/header overrides below.
+   ========================================================================== */
+@media (min-width: 901px) {
+  .mobile-drawer-actions,
+  .mobile-nav-backdrop,
+  .mobile-nav-btn,
+  .mobile-nav-toggle,
+  #mobile-nav-btn,
+  #mobile-menu-btn {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  .mobile-nav-backdrop.is-open {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Restore legacy desktop glass header */
+  .glass-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height, 80px);
+    min-height: var(--header-height, 80px);
+    z-index: 1000;
+    background: var(--bg-header-glass, rgba(7, 9, 19, 0.82));
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    min-height: var(--header-height, 80px);
+    position: relative;
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.35rem;
+    font-weight: 850;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    text-decoration: none;
+    min-width: 0;
+  }
+
+  .brand-logo span {
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    font-size: 1.35rem;
+    font-weight: 850;
+    color: #ffffff;
+  }
+
+  .brand-orbit-icon {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    color: var(--color-cyan, #38bdf8);
+  }
+
+  .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 2.2rem !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    overflow: visible !important;
+    align-items: center !important;
+    pointer-events: auto !important;
+    z-index: auto !important;
+  }
+
+  .nav-link {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    font-weight: 650;
+    padding: 0.35rem 0;
+  }
+
+  .nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  body.mobile-nav-open {
+    overflow: auto !important;
+  }
+
+  body.mobile-nav-open .nav-links {
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   5. Tablet & Mobile Side Drawer System (max-width: 900px)
+   ========================================================================== */
+
+/* Mobile-only header stacking (must not affect desktop) */
+@media (max-width: 900px) {
+  .glass-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    min-height: var(--header-height, 72px);
+    z-index: 1050;
+  }
+  .glass-header.is-nav-open,
+  body.mobile-nav-open .glass-header {
+    z-index: 1100;
+  }
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: var(--header-height, 72px);
+    position: relative;
+  }
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    min-width: 0;
+    z-index: 1055;
+  }
+  .brand-logo span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(0.95rem, 2.4vw, 1.2rem) !important;
+    font-weight: 800 !important;
+    color: #fff !important;
+  }
+  .brand-orbit-icon {
+    flex-shrink: 0 !important;
+    width: 34px !important;
+    height: 34px !important;
+    color: #70D6FF !important;
+  }
+  .nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .mobile-nav-btn {
+    display: flex !important;
+  }
+
+  /* Drawer is razor-sharp, opaque cosmic navy, sits above backdrop */
+  .nav-links {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(320px, 86vw);
+    height: 100vh;
+    height: 100dvh;
+    margin: 0;
+    padding: calc(var(--header-height, 72px) + 1.25rem) 1.25rem 2rem;
+    gap: 0.4rem;
+    background: #0B1020 !important;
+    background: linear-gradient(180deg, #0B1020 0%, #10162B 100%) !important;
+    border-left: 1px solid rgba(112, 214, 255, 0.25);
+    box-shadow: -16px 0 45px rgba(0, 0, 0, 0.85);
+    z-index: 1110;
+    transform: translateX(105%);
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    align-items: stretch;
+    pointer-events: auto;
+  }
+
+  .nav-links.is-open {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .nav-links > .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    color: #F1F5F9 !important;
+    font-weight: 700;
+    font-size: 1.05rem;
+    border: 1px solid transparent;
+    text-decoration: none;
+    cursor: pointer;
+    pointer-events: auto;
+    position: relative;
+    z-index: 1112;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .nav-links > .nav-link:hover,
+  .nav-links > .nav-link:focus-visible {
+    background: rgba(112, 214, 255, 0.12);
+    border-color: rgba(112, 214, 255, 0.3);
+    color: #70D6FF !important;
+  }
+
+  .nav-user-name {
+    display: none;
+  }
+
+  .nav-dash-btn span {
+    display: none;
+  }
+
+  .nav-dash-btn {
+    padding: 0.45rem 0.65rem !important;
+  }
+
+  .brand-logo span {
+    max-width: 44vw;
+  }
+}
+
+/* ==========================================================================
+   6. Tablet Range Grids ONLY (641px to 900px)
+   Explicit min/max bounds prevent leaking 2 columns into mobile phones
+   ========================================================================== */
+@media (min-width: 641px) and (max-width: 900px) {
+  .courses-grid,
+  .rail-nodes-grid,
+  .journey-stages-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   7. Mobile Handsets & Small Viewports (max-width: 768px)
+   - Hero feels like the complete, balanced first screen (100svh)
+   - Background video scrim reduced so celestial art is visible with depth
+   - Grids ("Why Choose Code Orbit", Courses, Rail, Footer) strictly 1 column
+   - Lower sections unclipped with natural flow
+   ========================================================================== */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* Compact header auth on mobile — full auth links live in drawer */
+  .nav-auth {
+    display: none !important;
+  }
+
+  .brand-logo span {
+    max-width: 58vw;
+  }
+
+  /* ------------------------------------------------------------------------
+     Hero Mobile Composition: Perfect First Full-Screen
+     ------------------------------------------------------------------------ */
+  .hero-section {
+    min-height: 100svh;
+    min-height: 100dvh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: calc(var(--header-height, 72px) + 1.25rem);
+    padding-bottom: calc(2.25rem + env(safe-area-inset-bottom, 0px));
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Artwork visibility: slightly brighter video, less dense dark scrim */
+  .hero-video-bg {
+    opacity: 0.88;
+    object-position: 70% center;
+  }
+
+  .hero-scrim-overlay {
+    background: linear-gradient(
+      165deg,
+      rgba(4, 6, 15, 0.82) 0%,
+      rgba(7, 10, 26, 0.68) 42%,
+      rgba(10, 16, 38, 0.35) 72%,
+      rgba(4, 6, 15, 0.20) 100%
+    );
+  }
+
+  .hero-bottom-fade {
+    height: 90px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(4, 6, 15, 0.6) 60%, #04060f 100%);
+  }
+
+  .hero-content {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+  }
+
+  .hero-tag {
+    margin-bottom: 1rem;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.75rem;
+    align-self: flex-start;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.35rem, 11vw, 3.4rem) !important;
+    line-height: 1.08;
+    margin-bottom: 1.1rem;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.85);
+  }
+
+  .hero-description {
+    font-size: clamp(0.92rem, 3.8vw, 1.05rem) !important;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 96%;
+    color: #CBD5E1;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
+  }
+
+  .hero-cta-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.85rem;
+  }
+
+  .hero-cta-row .btn-pill,
+  .hero-cta-row a {
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
+    font-size: 0.95rem;
+  }
+
+  .hero-floating-code-token {
+    display: none;
+  }
+
+  /* ------------------------------------------------------------------------
+     Lower Index Sections & "Why Choose Code Orbit" Single Column
+     ------------------------------------------------------------------------ */
+  .journey-section {
+    padding: 4.5rem 0 5rem !important;
+    position: relative;
+    z-index: 10;
+  }
+
+  .journey-flow-indicator {
+    max-width: 100%;
+    margin: 0 auto 2.5rem !important;
+    padding: 0.5rem 0.8rem;
+    gap: 0.45rem;
+    overflow-x: auto;
+  }
+
+  .journey-orbit-svg {
+    display: none !important;
+  }
+
+  .journey-stages-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    max-width: 440px;
+    margin: 0 auto;
+    gap: 1.6rem;
+    width: 100%;
+  }
+
+  .stage-node-1,
+  .stage-node-2,
+  .stage-node-3,
+  .stage-node-4 {
+    transform: none !important;
+  }
+
+  .stage-destination-pedestal {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .courses-section {
+    padding: 4.5rem 0 5rem !important;
+  }
+
+  .courses-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    max-width: 440px;
+    margin: 0 auto;
+    gap: 1.6rem;
+  }
+
+  .course-card-glass {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Cinematic Section - Natural expansion without clipping */
+  .cinematic-build-section {
+    padding: 3.5rem 0 4rem !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  .cinematic-tech-ambient {
+    display: none !important;
+  }
+
+  .cinematic-split-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 2rem !important;
+    width: 100% !important;
+  }
+
+  .cinematic-story-side {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .concept-progression-rail {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: flex-start !important;
+    gap: 0.5rem !important;
+    margin-bottom: 1.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .cinematic-universe-stage {
+    position: relative !important;
+    width: 100% !important;
+    min-height: 240px !important;
+    max-height: none !important;
+    height: auto !important;
+    aspect-ratio: 16 / 10 !important;
+  }
+
+  .cinematic-energy-beam {
+    display: none !important;
+  }
+
+  /* Feature Rail */
+  .orbit-rail-section {
+    padding: 4.5rem 0 5rem !important;
+  }
+
+  .rail-orbit-line {
+    display: none !important;
+  }
+
+  .rail-nodes-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    max-width: 360px;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+
+  /* Footer */
+  .footer-top-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem;
+  }
+
+  /* Data Tables */
+  .table-wrap,
+  .data-table-wrapper,
+  .admin-table-scroll,
+  .table-responsive-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  table.data-table,
+  .admin-table {
+    min-width: 560px;
+  }
+}
+
+/* ==========================================================================
+   8. Inner Dashboard Headers (Admin, Teacher, Student)
+   Prevents crowded buttons, unreadable labels, and broken layouts on mobile
+   ========================================================================== */
+.admin-responsive-header,
+.teacher-responsive-header {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 880px) {
+  .admin-responsive-header,
+  .teacher-responsive-header,
+  header[style*="justify-content: space-between"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.85rem !important;
+    padding: 1rem !important;
+    height: auto !important;
+  }
+
+  .admin-responsive-header nav,
+  .teacher-responsive-header nav,
+  header[style*="justify-content: space-between"] nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 0.35rem !important;
+    width: 100% !important;
+    justify-content: flex-start !important;
+    scrollbar-width: none !important;
+    gap: 0.5rem !important;
+  }
+
+  .admin-responsive-header nav::-webkit-scrollbar,
+  .teacher-responsive-header nav::-webkit-scrollbar,
+  header[style*="justify-content: space-between"] nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .admin-responsive-header nav .btn,
+  .teacher-responsive-header nav .btn,
+  header[style*="justify-content: space-between"] nav .btn,
+  .tab-btn {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  .admin-header-user-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding-top: 0.75rem !important;
+    gap: 0.75rem !important;
+  }
+
+  .admin-header-user-row > div:first-child {
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    text-align: left !important;
+  }
+
+  .admin-header-user-row .btn {
+    flex-shrink: 0 !important;
+  }
+}
+
+/* Sidebar for Student / App Shell - Opaque, crisp, zero blur on mobile */
+@media (max-width: 992px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 1080 !important;
+    background-color: #0B1020 !important;
+    background: #0B1020 !important;
+    border-right: 1px solid rgba(112, 214, 255, 0.25) !important;
+    box-shadow: 16px 0 45px rgba(0, 0, 0, 0.9) !important;
+    width: min(300px, 84vw) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .sidebar.open,
+  .sidebar.is-open {
+    transform: translateX(0);
+  }
+  .mobile-sidebar-close-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #FFFFFF !important;
+    cursor: pointer;
+  }
+  .main-wrapper,
+  .app-main,
+  .content-area {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+
+  /* Universal Mobile Navigation: Eliminate all blur for crisp, performant rendering */
+  .sidebar,
+  .nav-links,
+  .top-header,
+  .glass-header,
+  .admin-responsive-header,
+  .teacher-responsive-header,
+  .auth-page-header,
+  .exam-header-nav,
+  .mobile-drawer-overlay,
+  .mobile-drawer-content,
+  .mobile-nav-backdrop,
+  .sidebar-backdrop-overlay {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+/* Stat Grid Cards */
+@media (max-width: 1024px) {
+  [style*="grid-template-columns: repeat(4"],
+  [style*="grid-template-columns:repeat(4"],
+  .dashboard-stats-grid,
+  .metrics-grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  [style*="grid-template-columns: repeat(4"],
+  [style*="grid-template-columns:repeat(4"],
+  [style*="grid-template-columns: repeat(3"],
+  [style*="grid-template-columns:repeat(3"],
+  .dashboard-stats-grid,
+  .metrics-grid-4,
+  .metrics-grid-3 {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
+
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
+}
+
+/* Modals */
+@media (max-width: 640px) {
+  .modal-overlay, .modal-backdrop {
+    padding: 0.5rem !important;
+  }
+
+  .modal-container, .modal-dialog,
+  div[style*="max-width: 600px"],
+  div[style*="max-width: 700px"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 94vh !important;
+    max-height: 94dvh !important;
+    margin: 0 !important;
+    border-radius: 16px !important;
+  }
+
+  .modal-body {
+    padding: 1rem !important;
+  }
+
+  .modal-footer {
+    padding: 0.85rem 1rem !important;
+    flex-wrap: wrap !important;
+  }
+
+  .modal-footer .btn {
+    flex: 1 1 auto !important;
+    min-width: 120px !important;
+  }
+}
+
+/* Stepper & Workspace */
+@media (max-width: 768px) {
+  .cyber-stepper-bar,
+  .stepper-bar-container {
+    padding: 0.5rem 1rem !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    justify-content: flex-start !important;
+    gap: 1.25rem !important;
+    scrollbar-width: none !important;
+  }
+
+  .cyber-stepper-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .stepper-node {
+    flex-shrink: 0 !important;
+  }
+
+  .lesson-wrapper-narrow {
+    padding: 0 0.85rem !important;
+    margin-top: 1rem !important;
+  }
+
+  .cyber-lesson-banner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    padding: 1rem 1.25rem !important;
+  }
+
+  .chat-speech-bubble {
+    max-width: 88% !important;
+    padding: 0.85rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  .ide-split-workspace {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  .ide-split-workspace > div {
+    height: 320px !important;
+    max-height: 350px !important;
+  }
+}
+
+/* Exam UI */
+@media (max-width: 640px) {
+  .exam-question-box,
+  .exam-card-container {
+    padding: 1.25rem !important;
+    border-radius: 16px !important;
+  }
+
+  .exam-option,
+  .review-opt-item {
+    padding: 0.85rem 1rem !important;
+    font-size: 0.9rem !important;
+    min-height: 48px !important;
+  }
+
+  .exam-nav-strip {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+  }
+
+  .exam-nav-pill {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .attempt-counter-pill {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.65rem !important;
+  }
+}
+
+/* Small Tier (320px - 374px) */
+@media (max-width: 374px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container,
+  .page-content,
+  main[style*="padding"] {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  .btn, .btn-pill {
+    padding: 0.55rem 1rem !important;
+    font-size: 0.82rem !important;
+  }
+
+  .brand-logo span,
+  .cyber-logo-tag span {
+    font-size: 0.95rem !important;
+    max-width: 140px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .hero-headline {
+    font-size: 2rem !important;
+  }
+
+  .card, .glass-card {
+    padding: 1rem !important;
+    border-radius: 14px !important;
+  }
+
+  .top-header {
+    padding: 0 1rem !important;
+  }
+
+  .header-greeting h1 {
+    font-size: 1.1rem !important;
+  }
+
+  .header-greeting p {
+    font-size: 0.75rem !important;
+  }
+
+  .table-responsive-wrapper table {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Sidebar Backdrop Overlay for Student App Shell - Crisp, opaque, zero blur */
+.sidebar-backdrop-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 6, 15, 0.82) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  z-index: 1070 !important;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.sidebar-backdrop-overlay.is-active {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ==========================================================================
+   Course Overview Mobile Architecture & Layout Transformation
+   ========================================================================== */
+@media (max-width: 880px) {
+  .chapter-header-card,
+  #course-header-card {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 1.5rem 1.25rem !important;
+    gap: 1.25rem !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+
+  .chapter-header-left {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+
+  .chapter-icon-badge,
+  #course-icon-badge {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    border-radius: 12px !important;
+    font-size: 1.1rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .chapter-header-titles {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .chapter-header-titles h1,
+  #course-title-text {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .chapter-header-titles p,
+  #course-desc-text {
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .chapter-progress-box {
+    text-align: left !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding-top: 1rem !important;
+  }
+
+  #course-action-btn-wrap {
+    margin-top: 1rem !important;
+  }
+
+  #course-action-btn-wrap .btn,
+  #course-action-btn-wrap button {
+    width: 100% !important;
+    min-height: 44px !important;
+    font-size: 0.95rem !important;
+  }
+
+  .chapters-layout-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+  }
+
+  .chapter-dir-list {
+    width: 100% !important;
+    gap: 0.85rem !important;
+  }
+
+  .chapter-dir-card {
+    padding: 1.1rem 1.2rem !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: #0D1224 !important;
+  }
+
+  .chapter-detail-container {
+    padding: 1.25rem 1rem !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: #0D1224 !important;
+    border-radius: 14px !important;
+  }
+
+  .lesson-item-card {
+    padding: 0.85rem 1rem !important;
+    min-height: 48px !important;
+  }
+
+  .lesson-item-left {
+    gap: 0.75rem !important;
+    min-width: 0 !important;
+  }
+
+  .lesson-num-icon {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    font-size: 0.8rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .lesson-item-title {
+    font-size: 0.9rem !important;
+    line-height: 1.3 !important;
+    word-break: break-word !important;
+  }
+
+  .lesson-item-meta {
+    font-size: 0.75rem !important;
+  }
+
+  /* Lesson Page Mobile Reconstruction */
+  .cyber-stepper-bar {
+    padding: 0.5rem 1rem !important;
+    justify-content: flex-start !important;
+    gap: 0.75rem !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    background: #0D1127 !important;
+  }
+
+  .stepper-divider {
+    display: none !important;
+  }
+
+  .stepper-node {
+    flex-direction: row !important;
+    gap: 0.35rem !important;
+    padding: 0.35rem 0.65rem !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .stepper-circle {
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 0.75rem !important;
+  }
+
+  .lesson-wrapper-narrow {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 1rem auto 3rem auto !important;
+    padding: 0 1rem !important;
+    box-sizing: border-box !important;
+    gap: 1.25rem !important;
+  }
+
+  .cyber-lesson-banner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    padding: 1.15rem 1.25rem !important;
+    border-radius: 14px !important;
+    background: #0D1322 !important;
+  }
+
+  .cyber-lesson-banner h1 {
+    font-size: 1.25rem !important;
+  }
+
+  .dialogue-stream-card {
+    padding: 1rem 0.85rem !important;
+    border-radius: 14px !important;
+    background: #0A0E1A !important;
+  }
+
+  .chat-row {
+    gap: 0.65rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .chat-avatar-frame {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    border-radius: 10px !important;
+  }
+
+  .chat-speech-bubble {
+    max-width: calc(100% - 50px) !important;
+    padding: 0.85rem 1rem !important;
+    font-size: 0.92rem !important;
+    line-height: 1.5 !important;
+    border-radius: 12px !important;
+  }
+
+  .ide-split-workspace {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    max-height: none !important;
+    border-radius: 12px !important;
+  }
+
+  .ide-code-panel {
+    width: 100% !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    height: auto !important;
+    min-height: 200px !important;
+  }
+
+  .ide-textarea-wrapper {
+    min-height: 180px !important;
+    height: 240px !important;
+    max-height: 320px !important;
+  }
+
+  .ide-code-input {
+    min-height: 180px !important;
+    font-size: 15px !important;
+  }
+
+  .ide-actions-bar {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    padding: 0.65rem 0.85rem !important;
+    background: #080D1A !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .ide-actions-bar .btn,
+  .ide-actions-bar .ide-action-btn,
+  .btn-run-code {
+    position: static !important;
+    width: auto !important;
+    flex: 1 1 auto !important;
+    min-width: 120px !important;
+    justify-content: center !important;
+    min-height: 44px !important;
+    margin: 0 !important;
+    border-radius: 10px !important;
+  }
+
+  .ide-console-panel {
+    width: 100% !important;
+    min-height: 180px !important;
+    max-height: 320px !important;
+    height: auto !important;
+    padding: 0.85rem 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .checkpoint-card,
+  .concept-banner-card,
+  .visual-diagram-card,
+  .summary-takeaways-card,
+  .micro-quiz-card,
+  .lesson-summary-banner-card,
+  .key-points-footer-block {
+    padding: 1.15rem 1rem !important;
+    border-radius: 14px !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: #0D1322 !important;
+  }
+
+  #complete-lesson-btn {
+    width: 100% !important;
+    min-height: 48px !important;
+    justify-content: center !important;
+  }
+
+  /* Admin & Teacher Dashboard Cards and Grids Container Containment */
+  #teachers-grid,
+  #students-grid,
+  .admin-grid,
+  .faculty-grid,
+  [id*="-grid"] {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    gap: 1rem !important;
+  }
+
+  .teacher-card,
+  .student-card,
+  .admin-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    word-break: break-word !important;
+    overflow: hidden !important;
+  }
+
+  #academic-levels-checkboxes,
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 0.65rem !important;
+  }
+}
+
+/* Dashboard & Courses Viewport Polish on Mobile */
+@media (max-width: 640px) {
+  .top-header {
+    height: 60px !important;
+    padding: 0 0.85rem !important;
+  }
+
+  .header-greeting h1 {
+    font-size: 1.05rem !important;
+    max-width: 48vw !important;
+  }
+
+  .header-greeting p {
+    display: none !important;
+  }
+
+  .courses-tab-bar {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 0.5rem !important;
+    scrollbar-width: none !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+  }
+
+  .courses-tab-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .courses-tab-btn {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 0.55rem 1rem !important;
+    font-size: 0.825rem !important;
+  }
+
+  .learning-path-banner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    padding: 1.25rem 1rem !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: #0B1020 !important;
+  }
+
+  .learning-path-banner > div:last-child {
+    width: 100% !important;
+  }
+
+  .academic-group-pill {
+    width: 100% !important;
+    justify-content: flex-start !important;
+  }
+
+  .continue-learning-banner {
+    grid-template-columns: 1fr !important;
+    padding: 1.5rem 1.25rem !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: #0B1020 !important;
+  }
+
+  .continue-banner-visual {
+    display: none !important;
+  }
+}
+
+/* Touch Friendly Target Sizes (Minimum 44px for Coarse Touch) */
+@media (hover: none) and (pointer: coarse) {
+  .btn,
+  .btn-pill,
+  .nav-item,
+  .tab-btn,
+  .mobile-nav-btn,
+  .notification-bell,
+  .theme-toggle-pill,
+  button,
+  input,
+  select {
+    min-height: 44px;
+  }
+
+  .btn-icon {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* ==========================================================================
+   Card Stability: Disable Rotational & Floating Animations on Mobile
+   ========================================================================== */
+@media (max-width: 992px) {
+  .glass-card,
+  .auth-page-card,
+  .dashboard-card,
+  .course-card,
+  .chapter-dir-card,
+  .chapter-header-card,
+  .question-card,
+  .exam-banner,
+  .feature-card,
+  .stat-card,
+  .action-card {
+    transform: none !important;
+    animation: none !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease !important;
+  }
+}
+
+
+
+/* Keep user chip compact on small screens; avatar stays circular */
+@media (max-width: 900px) {
+  .nav-user-cluster {
+    gap: 0.4rem;
+  }
+  .nav-user-chip {
+    padding: 0.15rem;
+    max-width: none;
+  }
+  .nav-user-avatar {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+  }
+  .nav-logout-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+
+/* ==========================================================================
+   Mobile drawer stacking fix (student sidebar + public header nav)
+   Backdrop BELOW drawer. Drawer fully opaque. No click-through.
+   ========================================================================== */
+.sidebar-backdrop-overlay {
+  z-index: 1090 !important;
+}
+.sidebar-backdrop-overlay.is-active {
+  z-index: 1090 !important;
+}
+@media (max-width: 992px) {
+  .sidebar,
+  .sidebar.open,
+  .sidebar.is-open {
+    z-index: 1200 !important;
+    background: #0B1020 !important;
+    background-color: #0B1020 !important;
+    pointer-events: auto !important;
+  }
+  body.sidebar-drawer-open .sidebar {
+    z-index: 1200 !important;
+  }
+}
+@media (max-width: 900px) {
+  .mobile-nav-backdrop,
+  .mobile-nav-backdrop.is-open {
+    z-index: 1090 !important;
+  }
+  .nav-links,
+  .nav-links.is-open {
+    z-index: 1200 !important;
+    background: #0B1020 !important;
+    pointer-events: auto !important;
+  }
+  .glass-header.is-nav-open,
+  body.mobile-nav-open .glass-header {
+    z-index: 1100 !important;
+  }
+  .mobile-nav-btn {
+    z-index: 1210 !important;
+  }
+}

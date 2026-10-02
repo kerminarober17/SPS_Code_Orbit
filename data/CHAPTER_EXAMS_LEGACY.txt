@@ -1,0 +1,3 @@
+LEGACY: data/chapter_exams.json uses old chapter ids (chap-web-*, chap-js-*, ...).
+Production exams: data/production_exams.json and production_exams_ar.json.
+Do not seed chapter_exams.json for the official five-course set.

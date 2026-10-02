@@ -1,0 +1,828 @@
+/* ==========================================================================
+   Cody — Space × Programming Tutor UI
+   Deep space void + cyan/violet orbit accents + terminal code textures
+   ========================================================================== */
+
+.cody-panel,
+.cody-chat-page,
+.cody-body {
+  --cody-void: #070A14;
+  --cody-panel: rgba(10, 14, 28, 0.82);
+  --cody-panel-solid: #0C1222;
+  --cody-cyan: #70D6FF;
+  --cody-cyan-dim: rgba(112, 214, 255, 0.14);
+  --cody-mint: #34D399;
+  --cody-mint-soft: #6EE7B7;
+  --cody-violet: #A78BFA;
+  --cody-violet-dim: rgba(167, 139, 250, 0.16);
+  --cody-border: rgba(112, 214, 255, 0.18);
+  --cody-border-strong: rgba(112, 214, 255, 0.38);
+  --cody-text: #E8EEF9;
+  --cody-muted: #8B9BB4;
+  --cody-user-bg: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(124, 108, 240, 0.18));
+  --cody-assistant-bg: rgba(14, 20, 36, 0.95);
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ---------- Page shell ---------- */
+.cody-chat-page {
+  padding: 0 !important;
+  min-height: calc(100vh - 56px);
+  display: flex;
+  flex-direction: column;
+}
+
+.cody-page-shell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem 1.15rem 1.25rem;
+  gap: 0.9rem;
+  box-sizing: border-box;
+  min-height: 0;
+}
+
+/* ---------- Mission bar (header) ---------- */
+.cody-mission-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem 0.75rem 0.85rem;
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, transparent 42%),
+    linear-gradient(225deg, rgba(112, 214, 255, 0.08) 0%, transparent 50%),
+    rgba(12, 18, 34, 0.75);
+  border: 1px solid var(--cody-border);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+    0 12px 40px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(14px);
+  flex-shrink: 0;
+}
+
+.cody-mission-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.cody-orbit-avatar {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+
+.cody-orbit-avatar img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(52, 211, 153, 0.55);
+  background: #0B1220;
+  box-shadow:
+    0 0 18px rgba(52, 211, 153, 0.35),
+    0 0 32px rgba(112, 214, 255, 0.12);
+  position: relative;
+  z-index: 2;
+}
+
+.cody-orbit-avatar-lg {
+  width: 108px;
+  height: 108px;
+}
+
+.cody-orbit-avatar-lg img {
+  width: 88px;
+  height: 88px;
+}
+
+.cody-orbit-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px dashed rgba(112, 214, 255, 0.35);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cody-orbit-ring-a {
+  animation: codyOrbitSpin 12s linear infinite;
+  border-color: rgba(112, 214, 255, 0.4);
+}
+
+.cody-orbit-ring-b {
+  inset: -5px;
+  border-style: solid;
+  border-color: rgba(167, 139, 250, 0.22);
+  animation: codyOrbitSpin 18s linear infinite reverse;
+}
+
+@keyframes codyOrbitSpin {
+  to { transform: rotate(360deg); }
+}
+
+.cody-mission-text {
+  min-width: 0;
+}
+
+.cody-mission-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.cody-mission-title-row h1 {
+  margin: 0;
+  font-size: 1.28rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #F4F7FF;
+  background: linear-gradient(90deg, #F4F7FF 0%, #70D6FF 55%, #6EE7B7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cody-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #6EE7B7;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  font-family: var(--font-mono);
+}
+
+.cody-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34D399;
+  box-shadow: 0 0 8px #34D399;
+  animation: codyPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes codyPulse {
+  0%, 100% { opacity: 0.55; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.cody-mission-sub {
+  margin: 0.2rem 0 0;
+  font-size: 0.82rem;
+  color: var(--cody-muted);
+  font-weight: 500;
+}
+
+.cody-mission-actions {
+  flex-shrink: 0;
+}
+
+.cody-btn-ghost {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 40px;
+  padding: 0.45rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid rgba(112, 214, 255, 0.28);
+  background: rgba(112, 214, 255, 0.08);
+  color: #D7F0FF;
+  font-weight: 700;
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.cody-btn-ghost:hover {
+  background: rgba(112, 214, 255, 0.16);
+  border-color: rgba(112, 214, 255, 0.5);
+  box-shadow: 0 0 20px rgba(112, 214, 255, 0.15);
+}
+
+/* ---------- Viewport (main chat card) ---------- */
+.cody-viewport {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 50% at 10% 0%, rgba(112, 214, 255, 0.07), transparent 55%),
+    radial-gradient(ellipse 70% 45% at 90% 100%, rgba(167, 139, 250, 0.08), transparent 50%),
+    rgba(9, 13, 26, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow:
+    0 0 0 1px rgba(112, 214, 255, 0.05) inset,
+    0 20px 60px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(18px);
+}
+
+/* subtle code-grid overlay */
+.cody-viewport-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image:
+    linear-gradient(rgba(112, 214, 255, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(112, 214, 255, 0.5) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+  z-index: 0;
+}
+
+.cody-chat-messages {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1.35rem 1.35rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.05rem;
+  min-height: 280px;
+  scroll-behavior: smooth;
+}
+
+.cody-chat-messages::-webkit-scrollbar { width: 8px; }
+.cody-chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(112, 214, 255, 0.2);
+  border-radius: 8px;
+}
+.cody-chat-messages::-webkit-scrollbar-track { background: transparent; }
+
+/* ---------- Empty / welcome ---------- */
+.cody-empty-state {
+  margin: auto 0;
+  text-align: center;
+  padding: 1.75rem 1rem 1.5rem;
+  color: var(--cody-muted);
+}
+
+.cody-empty-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.cody-empty-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cody-cyan);
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  background: var(--cody-cyan-dim);
+  border: 1px solid rgba(112, 214, 255, 0.3);
+}
+
+.cody-empty-state h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #F4F7FF;
+}
+
+.cody-empty-lead {
+  margin: 0 auto;
+  max-width: 440px;
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: #9AA8C0;
+}
+
+.cody-topic-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  margin: 1.15rem auto 0;
+  max-width: 520px;
+}
+
+.cody-chip {
+  appearance: none;
+  padding: 0.42rem 0.85rem;
+  min-height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(112, 214, 255, 0.22);
+  background: rgba(12, 20, 40, 0.75);
+  color: #D0DDF0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.cody-chip:hover {
+  border-color: rgba(52, 211, 153, 0.55);
+  background: rgba(16, 185, 129, 0.14);
+  color: #ECFDF5;
+  box-shadow: 0 0 16px rgba(52, 211, 153, 0.15);
+  transform: translateY(-1px);
+}
+
+.cody-empty-cta {
+  margin: 1.1rem 0 0;
+  font-size: 0.9rem;
+  color: #A5B4C8;
+}
+
+/* ---------- Message bubbles ---------- */
+.cody-msg-row {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  max-width: 100%;
+  animation: codyMsgIn 0.28s ease-out;
+}
+
+@keyframes codyMsgIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cody-msg-row.user {
+  flex-direction: row-reverse;
+}
+
+.cody-msg-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid rgba(52, 211, 153, 0.45);
+  background: #0B1220;
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.2);
+}
+
+.cody-msg-row.user .cody-msg-avatar {
+  border-color: rgba(112, 214, 255, 0.5);
+  box-shadow: 0 0 12px rgba(112, 214, 255, 0.2);
+}
+
+.cody-bubble {
+  max-width: min(78%, 620px);
+  padding: 0.8rem 1.05rem;
+  border-radius: 16px;
+  font-size: 0.925rem;
+  line-height: 1.58;
+  color: var(--cody-text);
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  position: relative;
+}
+
+.cody-msg-row.assistant .cody-bubble {
+  background: var(--cody-assistant-bg);
+  border: 1px solid rgba(52, 211, 153, 0.22);
+  border-bottom-left-radius: 5px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.cody-msg-row.assistant .cody-bubble::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #34D399, #70D6FF);
+  opacity: 0.85;
+}
+
+.cody-msg-row.user .cody-bubble {
+  background: var(--cody-user-bg);
+  border: 1px solid rgba(112, 214, 255, 0.35);
+  border-bottom-right-radius: 5px;
+  color: #F8FBFF;
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.08);
+}
+
+.cody-bubble code {
+  font-family: var(--font-mono);
+  font-size: 0.84em;
+  background: rgba(8, 12, 24, 0.95);
+  color: #70D6FF;
+  padding: 0.12rem 0.4rem;
+  border-radius: 5px;
+  border: 1px solid rgba(112, 214, 255, 0.28);
+}
+
+.cody-bubble strong {
+  color: #F4F7FF;
+  font-weight: 750;
+}
+
+/* Code blocks */
+.cody-code-block {
+  margin: 0.7rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(112, 214, 255, 0.22);
+  background: #080D18;
+  box-shadow: 0 0 24px rgba(112, 214, 255, 0.06);
+}
+
+.cody-code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.8rem;
+  background: linear-gradient(90deg, rgba(112, 214, 255, 0.08), rgba(167, 139, 250, 0.06));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #8BA0BC;
+  font-family: var(--font-mono);
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+}
+
+.cody-copy-btn {
+  appearance: none;
+  border: 1px solid rgba(112, 214, 255, 0.3);
+  background: rgba(112, 214, 255, 0.08);
+  color: #70D6FF;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.22rem 0.55rem;
+  border-radius: 6px;
+  cursor: pointer;
+  min-height: 28px;
+  transition: background 0.15s, border-color 0.15s;
+  font-family: inherit;
+}
+
+.cody-copy-btn:hover {
+  background: rgba(112, 214, 255, 0.18);
+  border-color: rgba(112, 214, 255, 0.55);
+}
+
+.cody-code-block pre {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #DCE7F7;
+}
+
+.cody-code-block pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* Error + typing */
+.cody-error-banner {
+  display: none;
+  position: relative;
+  z-index: 2;
+  margin: 0 1.15rem 0.45rem;
+  padding: 0.7rem 0.95rem;
+  border-radius: 12px;
+  background: rgba(253, 164, 175, 0.1);
+  border: 1px solid rgba(253, 164, 175, 0.35);
+  color: #FECDD3;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.cody-error-banner.is-visible { display: block; }
+
+.cody-typing {
+  position: relative;
+  z-index: 2;
+  min-height: 1.2rem;
+  padding: 0 1.4rem 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6EE7B7;
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+.cody-typing:not(:empty)::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 0.45rem;
+  border-radius: 50%;
+  background: #34D399;
+  box-shadow: 0 0 10px #34D399;
+  animation: codyPulse 1s ease-in-out infinite;
+  vertical-align: middle;
+}
+
+/* ---------- Composer ---------- */
+.cody-composer {
+  position: relative;
+  z-index: 2;
+  padding: 0.65rem 1rem 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, transparent, rgba(5, 8, 16, 0.55));
+  flex-shrink: 0;
+}
+
+.cody-composer-inner {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.6rem;
+  padding: 0.45rem 0.5rem 0.45rem 0.95rem;
+  border-radius: 16px;
+  background: rgba(6, 10, 20, 0.9);
+  border: 1px solid rgba(112, 214, 255, 0.16);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.cody-composer-inner:focus-within {
+  border-color: rgba(112, 214, 255, 0.48);
+  box-shadow:
+    0 0 0 3px rgba(112, 214, 255, 0.1),
+    0 0 28px rgba(112, 214, 255, 0.08);
+}
+
+.cody-composer-glow {
+  position: absolute;
+  inset: -1px;
+  border-radius: 16px;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(90deg, rgba(112, 214, 255, 0.25), rgba(52, 211, 153, 0.2), rgba(167, 139, 250, 0.25));
+  transition: opacity 0.2s;
+  z-index: -1;
+  filter: blur(8px);
+}
+
+.cody-composer-inner:focus-within .cody-composer-glow {
+  opacity: 0.45;
+}
+
+.cody-composer-inner textarea {
+  flex: 1;
+  resize: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #F1F5F9;
+  font-family: inherit;
+  font-size: 0.925rem;
+  line-height: 1.45;
+  min-height: 44px;
+  max-height: 140px;
+  padding: 0.55rem 0;
+}
+
+.cody-composer-inner textarea::placeholder {
+  color: #5B6B86;
+}
+
+.cody-send-btn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-width: 48px;
+  min-height: 44px;
+  padding: 0.55rem 1.05rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #22D3EE 0%, #34D399 55%, #10B981 100%);
+  color: #042F2E;
+  font-weight: 800;
+  font-size: 0.875rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  touch-action: manipulation;
+  transition: transform 0.12s, filter 0.15s, box-shadow 0.15s;
+  box-shadow:
+    0 4px 16px rgba(16, 185, 129, 0.4),
+    0 0 24px rgba(112, 214, 255, 0.15);
+}
+
+.cody-send-btn:hover:not(:disabled) {
+  filter: brightness(1.08);
+  box-shadow:
+    0 6px 22px rgba(16, 185, 129, 0.5),
+    0 0 32px rgba(112, 214, 255, 0.2);
+}
+
+.cody-send-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.cody-send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.cody-composer-hint {
+  margin: 0.45rem 0.25rem 0;
+  font-size: 0.7rem;
+  color: #5A6A84;
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Lesson panel (compact) ---------- */
+.cody-lesson-panel {
+  margin: 1.25rem 0 0;
+  background: rgba(10, 14, 28, 0.9);
+  border: 1px solid var(--cody-border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.cody-lesson-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.12), rgba(112, 214, 255, 0.05));
+  border-bottom: 1px solid rgba(112, 214, 255, 0.12);
+}
+
+.cody-avatar-sm {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(16, 185, 129, 0.5);
+  object-fit: cover;
+  background: #0F172A;
+  flex-shrink: 0;
+}
+
+.cody-lesson-header-text { flex: 1; min-width: 0; }
+
+.cody-lesson-header-text strong {
+  display: block;
+  color: #6EE7B7;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.cody-lesson-header-text span {
+  font-size: 0.8rem;
+  color: #94A3B8;
+}
+
+.cody-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.cody-quick-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  min-height: 38px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 999px;
+  border: 1px solid rgba(112, 214, 255, 0.28);
+  background: rgba(112, 214, 255, 0.07);
+  color: #E2E8F0;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background 0.15s, border-color 0.15s;
+  font-family: inherit;
+}
+
+.cody-quick-btn:hover,
+.cody-quick-btn:focus-visible {
+  background: rgba(16, 185, 129, 0.16);
+  border-color: rgba(16, 185, 129, 0.5);
+  outline: none;
+}
+
+.cody-quick-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.cody-lesson-body {
+  display: none;
+  flex-direction: column;
+  max-height: 420px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cody-lesson-panel.is-open .cody-lesson-body {
+  display: flex;
+}
+
+.cody-lesson-body .cody-chat-messages {
+  min-height: 140px;
+  max-height: 260px;
+  padding: 0.85rem 1rem;
+}
+
+.cody-lesson-body .cody-composer {
+  padding: 0.55rem 0.75rem 0.75rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .cody-page-shell {
+    padding: 0.75rem 0.65rem 0.9rem;
+    gap: 0.7rem;
+  }
+
+  .cody-mission-bar {
+    flex-wrap: wrap;
+    padding: 0.7rem 0.8rem;
+  }
+
+  .cody-mission-actions {
+    width: 100%;
+  }
+
+  .cody-btn-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cody-bubble {
+    max-width: 88%;
+  }
+
+  .cody-chat-messages {
+    padding: 1rem 0.85rem 0.5rem;
+  }
+
+  .cody-send-btn .desktop-only-inline {
+    display: none;
+  }
+
+  .cody-send-btn {
+    min-width: 44px;
+    padding: 0.55rem;
+  }
+
+  .cody-mission-title-row h1 {
+    font-size: 1.12rem;
+  }
+
+  .cody-empty-state h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cody-orbit-avatar-lg {
+    width: 88px;
+    height: 88px;
+  }
+  .cody-orbit-avatar-lg img {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+/* Legacy class aliases used by older markup */
+.cody-page-header { /* no-op alias */ }
+.cody-chat-card { /* viewport replaces this */ }
+.cody-chat-footer { /* composer replaces this */ }
+.cody-input-row { /* composer-inner replaces this */ }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login — SPS Code Orbit</title>
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/ux-polish.css?v=1.0" />
+</head>
+<body style="background:#070A14; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:1.5rem;">
+  <div style="width:100%; max-width:400px; background:rgba(16,23,42,0.9); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:1.75rem;">
+    <h1 style="margin:0 0 0.35rem; font-size:1.35rem; color:#fff;">Admin Login</h1>
+    <p style="margin:0 0 1.25rem; color:#94a3b8; font-size:0.9rem;">Credentials are configured on the server (secrets), not in the student database.</p>
+    <form id="admin-login-form">
+      <label style="display:block; font-size:0.8rem; color:#94a3b8; margin-bottom:0.35rem;">Username</label>
+      <input name="username" id="admin-username" autocomplete="username" required style="width:100%; margin-bottom:0.85rem; padding:0.65rem 0.75rem; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:#0b1220; color:#fff;" />
+      <label style="display:block; font-size:0.8rem; color:#94a3b8; margin-bottom:0.35rem;">Password</label>
+      <input type="password" name="password" id="admin-password" autocomplete="current-password" required style="width:100%; margin-bottom:1rem; padding:0.65rem 0.75rem; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:#0b1220; color:#fff;" />
+      <p style="font-size:0.8rem;color:#94a3b8;margin:0 0 0.75rem;">Administrator access only. Students and teachers use the main login page.</p>
+      <button type="submit" class="btn btn-primary" style="width:100%;">Sign in</button>
+      <p id="admin-login-error" style="display:none; color:#fca5a5; margin-top:0.85rem; font-size:0.9rem;"></p>
+    </form>
+  </div>
+  <script>
+    document.getElementById('admin-login-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const err = document.getElementById('admin-login-error');
+      err.style.display = 'none';
+      try {
+        const res = await fetch('/api/auth/admin_login.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          credentials: 'same-origin',
+          body: JSON.stringify({
+            username: document.getElementById('admin-username').value.trim(),
+            password: document.getElementById('admin-password').value
+          })
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || data.success === false) {
+          err.textContent = (data && data.message) || 'Login failed';
+          err.style.display = 'block';
+          return;
+        }
+        window.location.href = '/admin/dashboard.html';
+      } catch (ex) {
+        err.textContent = 'Network error. Try again.';
+        err.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

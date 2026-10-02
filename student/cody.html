@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cody — AI Programming Tutor | SPS Code Orbit</title>
+  <link rel="stylesheet" href="../css/global.css?v=2.0">
+  <link rel="stylesheet" href="../css/components.css?v=2.0">
+  <link rel="stylesheet" href="../css/responsive.css?v=1.2">
+  <link rel="stylesheet" href="../css/dashboard.css?v=2.0">
+  <link rel="stylesheet" href="../css/cody.css?v=2.0">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="cody-body">
+  <div class="space-universe-backdrop" aria-hidden="true">
+    <div class="starfield-layer"></div>
+    <div class="starfield-layer-dense"></div>
+    <div class="nebula-swirl-container">
+      <div class="nebula-cloud nebula-blue"></div>
+      <div class="nebula-cloud nebula-purple"></div>
+      <div class="nebula-cloud nebula-pink"></div>
+      <div class="nebula-cloud nebula-cyan-lower"></div>
+    </div>
+  </div>
+
+  <div class="app-shell" style="position: relative; z-index: 10;">
+    <aside id="app-sidebar"></aside>
+    <div class="main-wrapper">
+      <header id="top-header"></header>
+
+      <main class="page-content cody-chat-page">
+        <div class="cody-page-shell">
+
+          <!-- Mission header -->
+          <header class="cody-mission-bar">
+            <div class="cody-mission-identity">
+              <div class="cody-orbit-avatar">
+                <span class="cody-orbit-ring cody-orbit-ring-a"></span>
+                <span class="cody-orbit-ring cody-orbit-ring-b"></span>
+                <img src="/assets/cody/cody.png" alt="Cody"
+                     onerror="this.onerror=null;this.src='/assets/images/Astronaut_robot_holding_star.png';">
+              </div>
+              <div class="cody-mission-text">
+                <div class="cody-mission-title-row">
+                  <h1>Cody</h1>
+                  <span class="cody-status-pill" title="Online">
+                    <span class="cody-status-dot"></span>
+                    Online
+                  </span>
+                </div>
+                <p class="cody-mission-sub" data-i18n="cody.subtitle">Your Programming Tutor · Code Orbit</p>
+              </div>
+            </div>
+            <div class="cody-mission-actions">
+              <button type="button" class="cody-btn-ghost" id="cody-new-chat-btn">
+                <i data-lucide="sparkles" style="width:15px;height:15px;"></i>
+                <span data-i18n="cody.newChat">New Chat</span>
+              </button>
+            </div>
+          </header>
+
+          <!-- Chat viewport -->
+          <section class="cody-viewport" aria-label="Cody chat">
+            <div class="cody-viewport-grid" aria-hidden="true"></div>
+            <div class="cody-chat-messages" id="cody-messages" aria-live="polite">
+              <div class="cody-empty-state" id="cody-empty">
+                <div class="cody-empty-hero">
+                  <div class="cody-orbit-avatar cody-orbit-avatar-lg">
+                    <span class="cody-orbit-ring cody-orbit-ring-a"></span>
+                    <span class="cody-orbit-ring cody-orbit-ring-b"></span>
+                    <img src="/assets/cody/cody.png" alt=""
+                         onerror="this.onerror=null;this.src='/assets/images/Astronaut_robot_holding_star.png';">
+                  </div>
+                  <div class="cody-empty-badge">&lt;/&gt; AI Tutor</div>
+                </div>
+                <h2 data-i18n="cody.emptyTitle">Hi! I'm Cody.</h2>
+                <p class="cody-empty-lead" data-i18n="cody.emptyBody">I'm your programming tutor inside Code Orbit. Ask me about:</p>
+                <div class="cody-topic-chips" id="cody-topic-chips">
+                  <button type="button" class="cody-chip" data-prompt="Explain variables in Python with a simple example">Python</button>
+                  <button type="button" class="cody-chip" data-prompt="Explain let vs const in JavaScript">JavaScript</button>
+                  <button type="button" class="cody-chip" data-prompt="How do HTML and CSS work together?">HTML &amp; CSS</button>
+                  <button type="button" class="cody-chip" data-prompt="How should I debug a syntax error in my code?">Debugging</button>
+                  <button type="button" class="cody-chip" data-prompt="What is a function and why do we use it?">Functions</button>
+                  <button type="button" class="cody-chip" data-prompt="Explain loops with a beginner-friendly example">Loops</button>
+                </div>
+                <p class="cody-empty-cta" data-i18n="cody.emptyCta">Let's code something together! 🚀</p>
+              </div>
+            </div>
+
+            <div class="cody-error-banner" id="cody-error" role="alert"></div>
+            <div class="cody-typing" id="cody-typing" aria-live="polite"></div>
+
+            <footer class="cody-composer">
+              <div class="cody-composer-inner">
+                <div class="cody-composer-glow" aria-hidden="true"></div>
+                <textarea id="cody-input" rows="1"
+                  placeholder="Ask Cody about code, bugs, or concepts..."
+                  data-i18n-placeholder="cody.inputPlaceholder"
+                  maxlength="4000"></textarea>
+                <button type="button" class="cody-send-btn" id="cody-send-btn" aria-label="Send">
+                  <i data-lucide="send" style="width:17px;height:17px;"></i>
+                  <span class="desktop-only-inline" data-i18n="cody.send">Send</span>
+                </button>
+              </div>
+              <p class="cody-composer-hint">Programming only · Session chat · Not for graded exam answers</p>
+            </footer>
+          </section>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/session.js?v=5.1"></script>
+  <script src="/js/theme.js?v=5.0"></script>
+  <script src="/js/i18n.js?v=1.0"></script>
+  <script src="/js/components.js?v=5.1"></script>
+  <script src="/js/mobile-nav.js?v=1.0"></script>
+  <script src="/js/cody.js?v=1.3"></script>
+  <script>
+    (async function () {
+      'use strict';
+      if (window.session && typeof window.session.requireAuth === 'function') {
+        const user = await window.session.requireAuth(['student', 'teacher', 'admin']);
+        if (!user) return;
+      } else if (window.session && typeof window.session.fetchUser === 'function') {
+        const user = await window.session.fetchUser();
+        if (!user) {
+          window.location.href = '/login.html?redirect=' + encodeURIComponent('/student/cody.html');
+          return;
+        }
+      }
+
+      if (typeof renderSidebar === 'function') renderSidebar('cody');
+      if (typeof renderTopHeader === 'function') renderTopHeader();
+      if (window.lucide) window.lucide.createIcons();
+      if (window.i18n && typeof window.i18n.applyTranslations === 'function') {
+        try { window.i18n.applyTranslations(); } catch (e) {}
+      }
+
+      const messagesEl = document.getElementById('cody-messages');
+      const emptyEl = document.getElementById('cody-empty');
+      const inputEl = document.getElementById('cody-input');
+
+      if (!window.CodyTutor || typeof window.CodyTutor.createChatController !== 'function') {
+        console.error('CodyTutor failed to load');
+        return;
+      }
+
+      if (inputEl) {
+        inputEl.addEventListener('input', function () {
+          this.style.height = 'auto';
+          this.style.height = Math.min(this.scrollHeight, 140) + 'px';
+        });
+      }
+
+      const controller = window.CodyTutor.createChatController({
+        messagesEl: messagesEl,
+        inputEl: inputEl,
+        sendBtn: document.getElementById('cody-send-btn'),
+        typingEl: document.getElementById('cody-typing'),
+        errorEl: document.getElementById('cody-error'),
+        emptyEl: emptyEl,
+        mode: 'chat'
+      });
+
+      document.getElementById('cody-new-chat-btn').addEventListener('click', function (e) {
+        e.preventDefault();
+        controller.reset();
+        if (emptyEl && !messagesEl.contains(emptyEl)) {
+          messagesEl.appendChild(emptyEl);
+        }
+        if (emptyEl) emptyEl.style.display = '';
+        if (inputEl) {
+          inputEl.value = '';
+          inputEl.style.height = 'auto';
+        }
+        if (window.lucide) window.lucide.createIcons();
+      });
+
+      // Topic chips → prefill & send
+      document.querySelectorAll('.cody-chip[data-prompt]').forEach(function (chip) {
+        chip.addEventListener('click', function (e) {
+          e.preventDefault();
+          const prompt = chip.getAttribute('data-prompt') || chip.textContent;
+          if (controller && typeof controller.submit === 'function') {
+            controller.submit(prompt);
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

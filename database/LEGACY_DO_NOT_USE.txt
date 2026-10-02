@@ -1,0 +1,32 @@
+These files are legacy / competing seeds / one-off maintenance.
+Do NOT run them on a fresh production database.
+
+Official install path: INSTALL_FRESH.md
+
+--- archive_legacy/ (entire folder) ---
+- production_rebuild.sql
+- database.sql
+- seed.sql
+- seed_curriculum.sql
+- seed_frontend_js_full.sql
+- seed_js_frontend_courses.sql
+- seed_js_frontend_level1.php
+- seed_python_level2.php
+- seed_python_level2.sql
+- seed_python_level2_content.sql
+- seed_python_level2_full.sql
+- cleanup_legacy_courses.sql
+- fix_teacher_roster_links.sql
+- seed_translations.php
+- reconcile_curriculum_lessons.php
+
+--- archive_legacy/migrations_upgrade/ ---
+(Only if upgrading a very old DB that was not created from MASTER_DATABASE.sql)
+- 001_add_profiles_is_active.sql
+- 002_add_teacher_student_assignments.sql
+- 003_add_preferred_language.sql
+- 004_content_translations.sql
+- 006_student_class_stage_notes.sql
+- 007_profiles_academic_stage_class_section.sql
+
+MASTER_DATABASE.sql already includes the schema those migrations add.

@@ -1,0 +1,20 @@
+-- Migration 006: Student Class / Academic Stage notes
+-- NON-DESTRUCTIVE — no schema change required.
+--
+-- Architecture (unchanged, authoritative):
+--   profiles.class_id  →  classes.id  →  grades.id  →  academic_groups.id
+--
+-- Academic Stage (Primary | Preparatory | Secondary) is DERIVED at query time
+-- from academic_groups.name:
+--   name LIKE 'Primary%'     → Primary
+--   name LIKE 'Preparat%'    → Preparatory
+--   name LIKE 'Second%'      → Secondary
+--
+-- Human-readable Class is classes.name (e.g. "Class 5C - Gamma").
+-- Signup now requires a valid classes.id (UUID) and persists profiles.class_id.
+--
+-- Legacy students with class_id IS NULL remain "Class not provided".
+-- No automatic guessing or backfill of unknown classes.
+--
+-- No ALTER TABLE statements in this migration.
+SELECT '006_student_class_stage_notes: no schema changes — documentation only' AS status;

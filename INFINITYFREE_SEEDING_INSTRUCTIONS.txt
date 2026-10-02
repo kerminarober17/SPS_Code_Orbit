@@ -1,0 +1,154 @@
+SPS CODE ORBIT — INFINITYFREE STAGING SEED (TEMPORARY WEB RUNNERS)
+==================================================================
+
+InfinityFree free hosting often has no SSH/CLI. These steps use temporary
+browser seeders that call the SAME official scripts used on the school server:
+
+  database/seed_curriculum.php
+  database/seed_exams.php
+
+CLI on the school server remains:
+
+  php database/seed_curriculum.php
+  php database/seed_exams.php
+
+------------------------------------------------------------------
+BEFORE YOU START
+------------------------------------------------------------------
+
+- Project is uploaded to the site document root (htdocs / public_html).
+- MySQL database already created in the InfinityFree control panel.
+- You have DB host, name, user, password from the panel.
+
+------------------------------------------------------------------
+STEP 1 — Import schema
+------------------------------------------------------------------
+
+In InfinityFree MySQL / phpMyAdmin (or SQL import):
+
+  Import file:  database/MASTER_DATABASE.sql
+
+Wait until import finishes without errors.
+
+------------------------------------------------------------------
+STEP 2 — Configure secrets (server only)
+------------------------------------------------------------------
+
+1. Copy:
+     config/secrets.local.php.example
+   to:
+     config/secrets.local.php
+
+2. Edit secrets.local.php and set at least:
+
+     DB_HOST
+     DB_NAME
+     DB_USER
+     DB_PASSWORD
+
+   Use the exact values from the InfinityFree MySQL panel.
+
+3. Set a LONG random token (32+ characters), for example a password-generator string:
+
+     'SEED_WEB_TOKEN' => 'paste_your_long_random_token_here',
+
+   Do not leave CHANGE_ME_TO_LONG_RANDOM_STRING.
+   Do not commit this file to public git if you use git.
+
+------------------------------------------------------------------
+STEP 3 — Run curriculum seed (browser)
+------------------------------------------------------------------
+
+Open (replace YOUR_TOKEN with the exact SEED_WEB_TOKEN value):
+
+  https://YOUR-DOMAIN/seed_curriculum_web.php?key=YOUR_TOKEN
+
+You should see STATUS: SUCCESS and a report including:
+
+  - 5 official courses
+  - 6/24, 10/40, 10/40, 6/28, 5/23 chapter/lesson counts
+  - Total 37 chapters / 155 lessons
+
+If STATUS: FAILED, read the log (DB credentials, missing export JSON, schema not imported).
+
+The seeder is idempotent (upsert). Re-running is safe.
+
+------------------------------------------------------------------
+STEP 4 — Verify curriculum
+------------------------------------------------------------------
+
+Optional checks:
+
+  - Open /api/courses/list.php while logged in as student/admin, or
+  - Continue to exam seed; exam seeder requires 37 chapters in DB.
+
+------------------------------------------------------------------
+STEP 5 — Run exam seed (browser)
+------------------------------------------------------------------
+
+  https://YOUR-DOMAIN/seed_exams_web.php?key=YOUR_TOKEN
+
+  (same SEED_WEB_TOKEN as curriculum)
+
+Expected:
+
+  STATUS: SUCCESS
+  37 chapter exams
+
+Requires data/production_exams.json on the server.
+
+------------------------------------------------------------------
+STEP 6 — Verify exams
+------------------------------------------------------------------
+
+Confirm the page log shows Exam seed complete and no "Exam seed error".
+
+------------------------------------------------------------------
+STEP 7 — Student smoke test
+------------------------------------------------------------------
+
+  Signup → Login → Dashboard → Course Catalog → open a course
+  (enrollment is applied on course open) → Chapter → Lesson
+  → Complete Lesson → Chapter Exam → Score → Progress → Logout
+
+Catalog should list the five published courses after seed.
+
+------------------------------------------------------------------
+STEP 8 — DELETE temporary web seeders (REQUIRED)
+------------------------------------------------------------------
+
+Delete these files from the live/staging server immediately after success:
+
+  seed_curriculum_web.php
+  seed_exams_web.php
+
+Optional: remove or blank SEED_WEB_TOKEN in secrets.local.php after seeding.
+
+Do NOT delete:
+
+  database/seed_curriculum.php
+  database/seed_exams.php
+
+Those remain for the school server CLI workflow.
+
+------------------------------------------------------------------
+SECURITY NOTES
+------------------------------------------------------------------
+
+- Web seeders refuse to run without a matching SEED_WEB_TOKEN.
+- Weak/placeholder tokens are rejected.
+- Do not share the seed URL publicly.
+- Do not leave the web seeders on the server after use.
+- DB passwords never go in the URL or in the web runner source.
+
+------------------------------------------------------------------
+IF SOMETHING FAILS ON INFINITYFREE
+------------------------------------------------------------------
+
+- 403 on seeder: wrong or missing SEED_WEB_TOKEN.
+- Database configuration error: fix secrets.local.php DB_* values.
+- Curriculum validation failed: data/curriculum_export.json missing/corrupt.
+- Exam seeder says run curriculum first: chapters not in DB yet.
+- 500 / blank page: enable temporary error logging in panel; confirm PHP version ≥ 7.4.
+- Timeout: re-run the same URL (idempotent upserts).
+

@@ -1,0 +1,113 @@
+SPS CODE ORBIT — OFFICIAL INSTALLATION (PRODUCTION)
+====================================================
+
+ONE production install path. Do not use legacy/destructive SQL for a normal school deploy.
+
+-------------------------------------------------------------------------------
+FRESH DEPLOYMENT
+-------------------------------------------------------------------------------
+
+1) Create an empty MySQL/MariaDB database with utf8mb4.
+
+2) Configure secrets on the server only:
+     copy config/secrets.local.php.example → config/secrets.local.php
+     set DB_HOST, DB_NAME, DB_USER, DB_PASSWORD
+     optional: CODY_OPENROUTER_API_KEY
+
+3) Import schema (non-destructive CREATE IF NOT EXISTS style):
+     mysql -u USER -p -h HOST DBNAME < database/MASTER_DATABASE.sql
+     mysql -u USER -p -h HOST DBNAME < database/migrations/004_content_translations.sql
+     mysql -u USER -p -h HOST DBNAME < database/migrations/005_challenges_system.sql
+     mysql -u USER -p -h HOST DBNAME < database/migrations/008_four_academic_tiers.sql
+     mysql -u USER -p -h HOST DBNAME < database/seed_school_structure.sql
+
+4) Seed all FIVE official courses (chapters + lessons):
+     php database/seed_curriculum.php
+
+   Expected report:
+     Programming Foundations — 6 chapters / 24 lessons
+     Python Foundations      — 10 chapters / 40 lessons
+     Python Level 2          — 10 chapters / 40 lessons
+     JavaScript Level 1      — 6 chapters / 28 lessons
+     Frontend Level 1        — 5 chapters / 23 lessons
+     Total                   — 37 chapters / 155 lessons
+
+   If validation fails, the script exits without partial silent success.
+
+5) Seed chapter exams:
+     php database/seed_exams.php
+
+   Expected: 37 chapter exams (matches every official chapter).
+
+6) Ensure exam JSON fallback files are present (submit API):
+     data/production_exams.json
+     data/production_exams_ar.json
+
+7) Deploy the web tree at the site document root (paths use /js /api /assets).
+
+8) Verify:
+     - /api/courses/list.php returns 5 published courses
+     - Student can enroll in each
+     - Open one lesson per track
+     - Submit one chapter exam
+     - Change default admin password if seed accounts were imported
+
+-------------------------------------------------------------------------------
+OFFICIAL PRODUCTION COURSES
+-------------------------------------------------------------------------------
+
+  course-programming-foundations   programming-foundations   6 ch / 24 les
+  course-python-foundations        python-foundations        10 ch / 40 les
+  course-python-level-2            python-level-2            10 ch / 40 les
+  course-javascript-level-1        javascript-level-1        6 ch / 28 les
+  course-frontend-level-1          frontend-level-1          5 ch / 23 les
+
+-------------------------------------------------------------------------------
+CONTENT ARCHITECTURE (DO NOT DUPLICATE WORKFLOWS)
+-------------------------------------------------------------------------------
+
+  Course catalog metadata     → data/courses.js
+  Rich lesson content         → data/*_curriculum.js + data/curriculum_index.js
+  Seed structure for MySQL    → data/curriculum_export.json
+  Exam questions (seed/API)   → data/production_exams.json (+ _ar.json)
+  User/progress/enrollment    → MySQL (via MASTER + seed scripts above)
+
+-------------------------------------------------------------------------------
+LEGACY / DO NOT USE FOR NORMAL INSTALL
+-------------------------------------------------------------------------------
+
+  database/production_rebuild.sql
+      DESTRUCTIVE (DROP tables). Old 3-course snapshot. NOT the official path.
+
+  database/cleanup_legacy_courses.sql
+      DESTRUCTIVE. Would delete non-kept courses. DO NOT RUN on production.
+
+  database/seed_js_frontend_level1.php
+  database/seed_frontend_js_full.sql
+      LEGACY optional helpers. FE/JS are included in seed_curriculum.php now.
+
+  data/chapter_exams.json
+      LEGACY exam ids (chap-web-*, etc.). Production uses production_exams.json.
+
+-------------------------------------------------------------------------------
+EXAM SUBMIT TROUBLESHOOTING (if JSON fallback needed)
+-------------------------------------------------------------------------------
+
+  Ensure data/production_exams.json and data/production_exams_ar.json are readable.
+  Prefer MySQL seed via seed_exams.php so submit does not rely only on JSON.
+
+-------------------------------------------------------------------------------
+DEFAULT SEED ACCOUNTS (SECURITY)
+-------------------------------------------------------------------------------
+
+Some SQL seed files (e.g. database/seed.sql, production_rebuild.sql) may insert
+test users with well-known example passwords documented in SQL comments
+(admin123 / teacher123 / student123).
+
+Before students use the platform:
+  1) Change the admin password immediately after first login, OR
+  2) Do not import those demo users into the school database, OR
+  3) Deactivate/delete demo accounts from Admin.
+
+Never leave default passwords active on a public school server.
+Never log passwords to the application error log.

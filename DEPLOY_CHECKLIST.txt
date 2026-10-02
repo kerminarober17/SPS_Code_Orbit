@@ -1,0 +1,56 @@
+SPS CODE ORBIT — UPLOAD THESE EDITED FILES OVER YOUR CURRENT PROJECT
+======================================================================
+
+This package contains ONLY the files that were fixed on YOUR Class_Letter_Fixed codebase.
+
+UPLOAD / OVERWRITE on the server (keep folder structure):
+
+  config/config.php
+  config/database.php
+  config/secrets.local.php.example
+  config/.htaccess
+  middleware/auth.php
+  js/session.js
+  index.html
+  signup.html
+  css/landing.css
+  api/challenges/list.php
+  student/challenges.html
+  .htaccess                          (project root)
+  uploads/.htaccess
+  uploads/challenges/.htaccess
+  assets/images/README_LOGOS.txt
+
+THEN ON THE SERVER (not in the ZIP — secrets stay private):
+
+  1. Copy config/secrets.local.php.example → config/secrets.local.php
+  2. Edit secrets.local.php:
+       DB_PASSWORD              = your NEW rotated MySQL password
+       CODY_OPENROUTER_API_KEY  = your NEW OpenRouter key
+  3. Optional logos:
+       assets/images/sps-school-logo.png
+       assets/images/tech-dev-department-logo.png
+  4. Wake the site at https://sps-code-orbit.great-site.net/
+  5. Open /api/system/db_ping.php  → connection should be ok
+
+WHAT CHANGED (summary):
+  - Removed hardcoded DB password + OpenRouter key from config.php
+  - Secrets load from config/secrets.local.php (NO .env required)
+  - Session-only auth (removed fake Bearer user-id headers from JS)
+  - Footer uses real logo image slots (no graduation-cap icon)
+  - Challenge list dedupe (API + student UI)
+  - Signup/login send session cookies (credentials: same-origin)
+  - Block public download of .md/.sql/secret-like files
+  - Block PHP execution under uploads/
+
+DO NOT put real secrets into the ZIP or into config.php defaults.
+
+
+======================================================================
+OFFICIAL CURRICULUM SEED (required on fresh DB)
+======================================================================
+  mysql ... < database/MASTER_DATABASE.sql
+  php database/seed_curriculum.php
+  php database/seed_exams.php
+  Expect 5 published courses, 37 chapters, 155 lessons, 37 exams.
+  See INSTALL.txt. Do not run production_rebuild.sql for normal deploy.
